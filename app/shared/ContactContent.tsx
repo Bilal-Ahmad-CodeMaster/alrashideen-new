@@ -2,13 +2,23 @@
 
 import { useFormSubmit } from "@/app/hooks/useFormSubmit";
 import { ContactFormData } from "@/app/types/form.types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useApp } from "../context/AppContext";
 
 export const ContactContent = () => {
   const appContext = useApp();
   const themeConfig = appContext?.themeConfig;
   const phone = themeConfig?.phoneNumber.replace(/\s+/g, "");
+
+  // Function to determine form type based on URL hash
+  const getFormType = () => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      if (hash === "#inquiry") return "inquiry";
+      if (hash === "#job") return "job";
+    }
+    return "contact";
+  };
 
   const [formData, setFormData] = useState<ContactFormData>({
     fullName: "",
@@ -19,7 +29,8 @@ export const ContactContent = () => {
     message: "",
   });
 
-  const { submitForm, isSubmitting, submitStatus } = useFormSubmit("contact", {
+  // Pass the dynamic type to your hook
+  const { submitForm, isSubmitting, submitStatus } = useFormSubmit(getFormType(), {
     onSuccess: () => {
       setFormData({
         fullName: "",
@@ -111,7 +122,9 @@ export const ContactContent = () => {
 
             {/* Combined Professional Form */}
             <form onSubmit={handleSubmit} className="bg-white border border-slate-100 rounded-2xl p-8 shadow-xl space-y-5">
-              <h2 className="text-3xl font-black uppercase text-slate-900">Send Enquiry</h2>
+              <h2 className="text-3xl font-black uppercase text-slate-900">
+                {getFormType() === "job" ? "Job Application" : "Send Enquiry"}
+              </h2>
 
               {submitStatus && (
                 <div className={`p-4 rounded-xl text-sm font-bold uppercase tracking-wide ${submitStatus.type === "success" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`}>
@@ -127,8 +140,10 @@ export const ContactContent = () => {
                 <input name="email" value={formData.email} onChange={handleChange} required className="w-full rounded-xl border-slate-200 bg-slate-50 p-4 focus:ring-2 focus:ring-primary outline-none transition-all" type="email" placeholder="Email Address" />
                 <input name="companyName" value={formData.companyName} onChange={handleChange} className="w-full rounded-xl border-slate-200 bg-slate-50 p-4 focus:ring-2 focus:ring-primary outline-none transition-all" type="text" placeholder="Company Name" />
               </div>
-              <input name="equipmentType" value={formData.equipmentType} onChange={handleChange} className="w-full rounded-xl border-slate-200 bg-slate-50 p-4 focus:ring-2 focus:ring-primary outline-none transition-all" type="text" placeholder="Machine / Service Required" />
-              <textarea name="message" value={formData.message} onChange={handleChange} required className="w-full rounded-xl border-slate-200 bg-slate-50 min-h-[180px] p-4 focus:ring-2 focus:ring-primary outline-none transition-all resize-none" placeholder="Write your requirement, machine model, issue details or job scope"></textarea>
+              {(getFormType() !== "job" )&&(
+                <input name="equipmentType" value={formData.equipmentType} onChange={handleChange} className="w-full rounded-xl border-slate-200 bg-slate-50 p-4 focus:ring-2 focus:ring-primary outline-none transition-all" type="text" placeholder={getFormType() === "job" ? "Position Applied For" : "Machine / Service Required"} />)
+              }  
+              <textarea name="message" value={formData.message} onChange={handleChange} required className="w-full rounded-xl border-slate-200 bg-slate-50 min-h-[180px] p-4 focus:ring-2 focus:ring-primary outline-none transition-all resize-none" placeholder={getFormType() === "job" ? "Describe your experience and skills" : "Write your requirement, machine model, issue details or job scope"}></textarea>
 
               <div className="flex flex-wrap gap-4 pt-2">
                 <button
@@ -136,7 +151,7 @@ export const ContactContent = () => {
                   disabled={isSubmitting}
                   className="flex-1 px-8 py-4 bg-slate-900 text-white font-black text-sm uppercase tracking-[0.2em] hover:bg-primary transition-all disabled:opacity-50"
                 >
-                  {isSubmitting ? "Sending..." : "Submit Enquiry"}
+                  {isSubmitting ? "Sending..." : "Submit Form"}
                 </button>
                 <a href={`https://wa.me/${phone}`} className="px-8 py-4 border-2 border-slate-900 text-slate-900 font-black text-sm uppercase tracking-[0.2em] hover:bg-slate-900 hover:text-white transition-all">
                   WhatsApp

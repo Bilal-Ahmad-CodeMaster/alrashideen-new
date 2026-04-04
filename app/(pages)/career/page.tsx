@@ -38,7 +38,7 @@ const CareersPage = () => {
                   <h2 className="mt-2 text-2xl font-black uppercase text-[#181a30]">Crane Electrician / Diagnostic Technician</h2>
                 </div>
                 <Link
-                  href="/contact#enquiry"
+                  href="/contact#job"
                   className="whitespace-nowrap px-5 py-3 bg-[#ffd700] text-[#181a30] font-bold rounded-lg hover:bg-[#181a30] hover:text-white transition-colors"
                 >
                   Apply Now
@@ -57,7 +57,7 @@ const CareersPage = () => {
                   <h2 className="mt-2 text-2xl font-black uppercase text-[#181a30]">Diesel Mechanic</h2>
                 </div>
                 <Link
-                  href="/contact#enquiry"
+                  href="/contact#inquiry"
                   className="whitespace-nowrap px-5 py-3 bg-[#ffd700] text-[#181a30] font-bold rounded-lg hover:bg-[#181a30] hover:text-white transition-colors"
                 >
                   Apply Now
@@ -76,7 +76,7 @@ const CareersPage = () => {
                   <h2 className="mt-2 text-2xl font-black uppercase text-[#181a30]">Lathe Machine Operator</h2>
                 </div>
                 <Link
-                  href="/contact#enquiry"
+                  href="/contact#inquiry"
                   className="whitespace-nowrap px-5 py-3 bg-[#ffd700] text-[#181a30] font-bold rounded-lg hover:bg-[#181a30] hover:text-white transition-colors"
                 >
                   Apply Now
@@ -95,7 +95,7 @@ const CareersPage = () => {
                   <h2 className="mt-2 text-2xl font-black uppercase text-[#181a30]">Workshop Supervisor</h2>
                 </div>
                 <Link
-                  href="/contact#enquiry"
+                  href="/contact#job"
                   className="whitespace-nowrap px-5 py-3 bg-[#ffd700] text-[#181a30] font-bold rounded-lg hover:bg-[#181a30] hover:text-white transition-colors"
                 >
                   Apply Now

@@ -69,7 +69,7 @@ export const Header = () => {
           {/* Action Buttons & Hamburger */}
           <div className="flex items-center gap-2 md:gap-3">
             <div className="hidden sm:flex items-center gap-2 md:gap-3">
-              <Link href="/contact#enquiry" className="px-4 py-2 rounded-lg bg-[#ffd700] text-[#221b00] text-sm font-bold hover:bg-[#e6c200] transition-colors">Enquiry</Link>
+              <Link href="/contact#inquiry" className="px-4 py-2 rounded-lg bg-[#ffd700] text-[#221b00] text-sm font-bold hover:bg-[#e6c200] transition-colors">Enquiry</Link>
               <Link href="/contact" className="px-4 py-2 rounded-lg border border-[#d0c6ab] text-sm font-bold text-[#181a30]">Contact</Link>
             </div>
 
@@ -116,7 +116,7 @@ export const Header = () => {
             </div>
 
             <div className="mt-auto flex flex-col gap-3 pb-6">
-              <Link href="/contact#enquiry" className="w-full text-center py-4 rounded-lg bg-[#ffd700] text-[#221b00] font-black uppercase text-xs tracking-widest">Enquiry Now</Link>
+              <Link href="/contact#inquiry" className="w-full text-center py-4 rounded-lg bg-[#ffd700] text-[#221b00] font-black uppercase text-xs tracking-widest">Enquiry Now</Link>
               <Link href="/contact" className="w-full text-center py-4 rounded-lg border border-slate-200 font-black uppercase text-xs tracking-widest text-[#181a30]">Contact Support</Link>
             </div>
           </div>

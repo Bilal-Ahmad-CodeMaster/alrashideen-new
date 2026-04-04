@@ -227,7 +227,7 @@ export const HomePage = () => {
           </div>
           <div className="flex flex-wrap gap-4 lg:justify-end">
             <a href="https://wa.me/971526366779" target="_blank" rel="noreferrer" className="px-8 py-4 bg-[var(--primary-container)] text-[var(--on-primary-container)] font-black text-sm uppercase tracking-[0.2em]">WhatsApp Now</a>
-            <Link href="/contact#enquiry" className="px-8 py-4 border border-[var(--outline)] text-ink font-black text-sm uppercase tracking-[0.2em]">Send Enquiry</Link>
+            <Link href="/contact#inquiry" className="px-8 py-4 border border-[var(--outline)] text-ink font-black text-sm uppercase tracking-[0.2em]">Send Enquiry</Link>
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Base form types
-export type FormType = "equipment" | "profile" | "contact" | "job";
+export type FormType = "equipment" | "profile" | "contact" | "job" |"inquiry" ;
 
 // Equipment Inquiry Form
 export interface EquipmentFormData {

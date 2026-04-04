@@ -4,11 +4,11 @@
 import { CONFIG } from "@/config";
 import { useEffect, useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
+import Link from "next/link";
 
 const Projects = () => {
   const [projects, setProjects] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  // State for the image preview modal
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -38,23 +38,7 @@ const Projects = () => {
 
   return (
     <>
-      <Toaster
-        position="top-right"
-        toastOptions={{
-          duration: 4000,
-          style: {
-            background: "rgb(17, 17, 33)",
-            color: "white",
-            border: "1px solid rgb(212,175,55)/30",
-          },
-          error: {
-            iconTheme: {
-              primary: "#ef4444",
-              secondary: "rgb(17, 17, 33)",
-            },
-          },
-        }}
-      />
+      <Toaster position="top-right" />
 
       {/* Image Preview Overlay */}
       {selectedImage && (
@@ -64,7 +48,7 @@ const Projects = () => {
         >
           <div className="relative max-w-5xl w-full h-full flex items-center justify-center">
             <button
-              className="absolute top-0 right-0 m-4 text-white text-4xl font-light hover:text-gray-300"
+              className="absolute top-6 right-6 text-white text-4xl font-light hover:text-primary transition-colors"
               onClick={() => setSelectedImage(null)}
             >
               &times;
@@ -78,116 +62,98 @@ const Projects = () => {
         </div>
       )}
 
-      <section className="bg-[#F2F2F2]  text-gray-800 w-full">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 pb-8">
-          <div className="flex flex-col gap-4 max-w-2xl">
-            <h1 className="text-[#1c1c0d] text-3xl sm:text-5xl md:text-6xl font-black leading-tight tracking-[-0.033em]">
-              Our Engineering Projects
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-secondary">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,215,0,.16),transparent_30%),linear-gradient(90deg,rgba(10,18,48,.96),rgba(10,18,48,.90),rgba(10,18,48,.84))]"></div>
+        <div className="absolute inset-0 opacity-15 bg-[linear-gradient(90deg,transparent_0,transparent_49.5%,rgba(255,255,255,.1)_49.5%,rgba(255,255,255,.1)_50.5%,transparent_50.5%,transparent_100%)]"></div>
+        <div className="relative container-wrap px-6 lg:px-8 py-24 lg:py-32">
+          <div className="max-w-5xl">
+            <div className="inline-flex items-center gap-3 px-4 py-2 border border-yellow-400/20 rounded-lg bg-white/5 mb-8">
+              <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+              <span className="text-primary text-xs md:text-sm font-black uppercase tracking-[0.28em]">
+                Project Showcase
+              </span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight leading-none text-white">
+              Our Projects <br />
+              <span className="text-primary">Portfolio</span>
             </h1>
-            <p className="text-black text-base sm:text-lg font-normal leading-relaxed">
-              Showcasing precision engineering, advanced manufacturing
-              excellence, and high-performance industrial solutions across
-              diverse sectors.
+            <p className="mt-8 max-w-4xl text-xl leading-9 text-yellow-300 font-medium">
+              Showcase of completed crane repairs, structural work, and
+              engineering projects across the construction and heavy machinery
+              sectors.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-white pt-8 pb-12">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {projects.map((item) => (
-              <div key={item._id} className="group flex flex-col gap-4">
-                <div
-                  className="relative cursor-pointer overflow-hidden rounded-xl aspect-[4/3] bg-gray-100"
-                  onClick={() => setSelectedImage(item.image)}
+      {/* Main Grid Section */}
+      <section className="py-20 bg-[#f6f7fb] grid-dots min-h-[600px]">
+        <div className="container-wrap px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12 border-b border-slate-200 pb-12">
+            <div className="max-w-3xl">
+              <p className="text-yellow-700 text-sm font-black uppercase tracking-[0.28em] mb-3">
+                Al Rashideen Engineering Group
+              </p>
+              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-[#0f1738] mb-6">
+                Project Portfolio
+              </h2>
+              {/* Restored Line Below */}
+              <p className="max-w-2xl text-slate-600 text-lg leading-8">
+                This page now feels closer to the businesses page with the same
+                premium industrial style. Each card showcases completed projects
+                and can be updated with real workshop photos.
+              </p>
+            </div>
+          </div>
+
+          {loading ? (
+            <div className="flex justify-center py-20">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+              {projects.map((project, index) => (
+                <article
+                  key={project._id || index}
+                  className="bg-white rounded-2xl overflow-hidden shadow-soft group flex flex-col h-full"
                 >
                   <div
-                    className="w-full cursor-pointer h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110"
-                    style={{
-                      backgroundImage: `url("${item.image}")`,
-                    }}
+                    className="h-64 bg-cover bg-center cursor-pointer transition-transform duration-700 group-hover:scale-105"
+                    style={{ backgroundImage: `url('${project.image}')` }}
+                    onClick={() => setSelectedImage(project.image)}
                   ></div>
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <p className="text-[#1c1c0d] capitalize text-lg font-bold leading-normal">
-                    {item.title}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+                  <div className="p-8 flex flex-col flex-grow">
+                    <span className="text-primary text-xs font-black uppercase tracking-[0.25em]">
+                      Project {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h2 className="mt-3 text-2xl font-black uppercase leading-tight text-secondary">
+                      {project.title}
+                    </h2>
+                    <p className="mt-4 text-slate-600 leading-7 line-clamp-3 mb-6">
+                      {project.description ||
+                        "Structural repair and reinforcement work with premium industrial standards."}
+                    </p>
+
+                    {/* Link pushed to the bottom of the card */}
+                    <div className="mt-auto">
+                      <Link
+                        href="/contact#inquiry"
+                        className="inline-flex items-center font-bold text-primary hover:text-secondary transition-all gap-2 group/btn"
+                      >
+                        Request Similar Work
+                        <span className="transition-transform group-hover/btn:translate-x-1">→</span>
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
-      <section className="bg-[#F2F2F2]  text-gray-800 py-16 sm:py-24">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-            <div className="md:w-1/3">
-              <h2 className="text-black text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4">
-                Project Excellence
-              </h2>
-              <p className="text-black/70 text-lg">
-                Our commitment to quality and technical precision is reflected
-                in our performance metrics.
-              </p>
-            </div>
-            <div className="md:w-2/3 w-full">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div className="flex flex-col gap-4 rounded-xl p-8 bg-black/5 border border-black/10">
-                  <span className="material-symbols-outlined text-4xl text-black">
-                    inventory_2
-                  </span>
-                  <div>
-                    <p className="text-black/60 text-sm font-bold uppercase tracking-widest">
-                      Completed
-                    </p>
-                    <p className="text-black text-4xl font-black leading-none mt-1">
-                      500+
-                    </p>
-                    <p className="text-black/60 text-xs font-medium mt-2">
-                      Projects Worldwide
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-4 rounded-xl p-8 bg-black/5 border border-black/10">
-                  <span className="material-symbols-outlined text-4xl text-black">
-                    verified
-                  </span>
-                  <div>
-                    <p className="text-black/60 text-sm font-bold uppercase tracking-widest">
-                      Satisfaction
-                    </p>
-                    <p className="text-black text-4xl font-black leading-none mt-1">
-                      100%
-                    </p>
-                    <p className="text-black/60 text-xs font-medium mt-2">
-                      Client Approval Rate
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-4 rounded-xl p-8 bg-black/5 border border-black/10">
-                  <span className="material-symbols-outlined text-4xl text-black">
-                    history_edu
-                  </span>
-                  <div>
-                    <p className="text-black/60 text-sm font-bold uppercase tracking-widest">
-                      Experience
-                    </p>
-                    <p className="text-black text-4xl font-black leading-none mt-1">
-                      25+
-                    </p>
-                    <p className="text-black/60 text-xs font-medium mt-2">
-                      Years in Industry
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
     </>
   );
 };
