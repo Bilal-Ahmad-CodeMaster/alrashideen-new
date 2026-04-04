@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<title>Projects | Al Rashideen Engineering Turning</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#705d00',
+          'primary-container': '#ffd700',
+          'on-primary-container': '#221b00',
+          background: '#fbf8ff',
+          surface: '#fbf8ff',
+          'surface-2': '#f4f2ff',
+          'surface-3': '#eeecff',
+          'surface-4': '#e7e6ff',
+          'surface-5': '#e0e0ff',
+          ink: '#181a30',
+          muted: '#4d4732',
+          outline: '#d0c6ab'
+        },
+        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        boxShadow: {
+          soft: '0 10px 40px rgba(24,26,48,.10)',
+          card: '0 14px 50px rgba(24,26,48,.12)'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Inter, sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24; }
+  .bg-grid-pattern { background-image: radial-gradient(#d0c6ab 1px, transparent 1px); background-size: 24px 24px; }
+  .container-wrap { max-width: 1400px; margin-inline: auto; }
+</style>
+</head>
+<body class="bg-surface text-ink selection:bg-primary-container selection:text-on-primary-container">
+<nav class="sticky top-0 z-50 border-b border-slate-100 bg-white/85 backdrop-blur-md shadow-sm">
+      <div class="container-wrap px-6 lg:px-8 py-4 flex items-center justify-between gap-6">
+        <a href="index.html" class="flex items-start text-xl md:text-2xl font-black tracking-tighter uppercase text-slate-900">
+          <img src="https://www.alrashideenengg.com/img/logo.alrashideen.png" alt="Logo" class="w-20 h-20 mr-2 -mt-4 self-start">
+          <div class="flex flex-col leading-tight">
+            AL RASHIDEEN
+            <span class="text-lg md:text-xl">ENGINEERING TURNING</span>
+          </div>
+        </a>
+        <div class="hidden lg:flex items-center gap-7"><a href="index.html" class="text-sm tracking-tight text-slate-600 hover:text-slate-900 font-medium">Home</a><a href="about.html" class="text-sm tracking-tight text-slate-600 hover:text-slate-900 font-medium">About Us</a><a href="services.html" class="text-sm tracking-tight text-slate-600 hover:text-slate-900 font-medium">Services</a><a href="businesses.html" class="text-sm tracking-tight text-slate-600 hover:text-slate-900 font-medium">Businesses</a><a href="projects.html" class="text-sm tracking-tight text-yellow-600 border-b-2 border-yellow-500 pb-1 font-bold">Projects</a><a href="careers.html" class="text-sm tracking-tight text-slate-600 hover:text-slate-900 font-medium">Careers</a><a href="contact.html" class="text-sm tracking-tight text-slate-600 hover:text-slate-900 font-medium">Contact Us</a></div>
+        <div class="flex items-center gap-3">
+          <a href="contact.html#enquiry" class="px-4 py-2 rounded-lg bg-primary-container text-on-primary-container text-sm font-bold">Enquiry</a>
+          <a href="contact.html" class="px-4 py-2 rounded-lg border border-outline text-sm font-bold text-ink">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+<header class="relative min-h-[84vh] lg:min-h-[880px] flex items-center overflow-hidden bg-ink">
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=80')"></div>
+  <div class="absolute inset-0 bg-[#111936]/78"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-[#111936]/95 via-[#111936]/78 to-[#111936]/28"></div>
+  <div class="relative z-10 w-full">
+    <div class="max-w-[1680px] mx-auto px-8 md:px-12 xl:px-16 2xl:px-24 py-20 lg:py-24">
+      <div class="max-w-[650px] ml-0 lg:ml-4 xl:ml-8">
+        <div class="inline-flex items-center gap-2 px-4 py-2 border border-primary-container/25 bg-primary-container/10 rounded-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+          <span class="text-primary-container text-xs md:text-sm font-black uppercase tracking-[0.28em]">Certified Engineering Firm</span>
+        </div>
+        <h1 class="mt-10 text-[58px] leading-[0.92] sm:text-[78px] md:text-[96px] xl:text-[112px] font-black text-white uppercase tracking-[-0.05em] italic">Crane<br>Repairing<br><span class="text-primary-container">Company</span></h1>
+        <p class="mt-10 max-w-[560px] text-[20px] leading-[1.25] md:text-[24px] text-primary-container border-l-[5px] border-primary-container pl-6">Professional crane repairing and maintenance services providing precision engineering solutions for heavy machinery across the region.</p>
+        <div class="mt-10 flex flex-wrap gap-5">
+          <a href="services.html" class="px-9 py-4 bg-primary-container text-on-primary-container font-black text-sm uppercase tracking-[0.22em]">Our Services</a>
+          <a href="contact.html" class="px-9 py-4 border border-white/25 text-white font-black text-sm uppercase tracking-[0.22em]">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-10 right-8 md:right-12 xl:right-16 hidden xl:flex flex-col gap-8 text-right">
+    <div><div class="text-6xl font-black text-primary-container leading-none">25+</div><div class="mt-2 text-white/65 text-xs uppercase tracking-[0.35em]">Years of Expertise</div></div>
+    <div><div class="text-6xl font-black text-primary-container leading-none">1200+</div><div class="mt-2 text-white/65 text-xs uppercase tracking-[0.35em]">Projects Completed</div></div>
+  </div>
+</header>
+<section class="relative overflow-hidden bg-secondary">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,215,0,.16),transparent_30%),linear-gradient(90deg,rgba(10,18,48,.96),rgba(10,18,48,.90),rgba(10,18,48,.84))]"></div>
+  <div class="absolute inset-0 opacity-15 bg-[linear-gradient(90deg,transparent_0,transparent_49.5%,rgba(255,255,255,.1)_49.5%,rgba(255,255,255,.1)_50.5%,transparent_50.5%,transparent_100%)]"></div>
+  <div class="relative container-wrap px-6 lg:px-8 py-24 lg:py-32">
+    <div class="max-w-5xl">
+      <div class="inline-flex items-center gap-3 px-4 py-2 border border-yellow-400/20 rounded-lg bg-white/5 mb-8">
+        <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+        <span class="text-primary text-xs md:text-sm font-black uppercase tracking-[0.28em]">Project Showcase</span>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tight leading-none text-white">Our Projects <br><span class="text-primary">Portfolio</span></h1>
+      <p class="mt-8 max-w-4xl text-xl leading-9 text-yellow-300">Showcase of completed crane repairs, structural work, and engineering projects across the construction and heavy machinery sectors.</p>
+    </div>
+  </div>
+</section>
+<section class="py-20 bg-[#f6f7fb] grid-dots">
+  <div class="container-wrap px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
+      <div class="max-w-3xl">
+        <p class="text-yellow-700 text-sm font-black uppercase tracking-[0.28em] mb-3">Al Rashideen Engineering Group</p>
+        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight text-[#0f1738]">Project Portfolio</h2>
+      </div>
+      <p class="max-w-2xl text-slate-600 text-lg leading-8">This page now feels closer to the businesses page with the same premium industrial style. Each card showcases completed projects and can be updated with real workshop photos.</p>
+    </div>
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6"><article class="bg-white rounded-2xl overflow-hidden shadow-soft"><div class="h-60 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80')"></div><div class="p-8"><span class="text-primary text-xs font-black uppercase tracking-[0.25em]">Project 01</span><h2 class="mt-3 text-2xl font-black uppercase leading-tight">Boom Repair & Reinforcement</h2><p class="mt-4 text-muted leading-8">Structural repair and reinforcement work for damaged boom sections with controlled fit-up and inspection.</p><a href="contact.html" class="inline-block mt-6 font-bold text-primary">Request Similar Work →</a></div></article><article class="bg-white rounded-2xl overflow-hidden shadow-soft"><div class="h-60 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80')"></div><div class="p-8"><span class="text-primary text-xs font-black uppercase tracking-[0.25em]">Project 02</span><h2 class="mt-3 text-2xl font-black uppercase leading-tight">Slewing Bearing Replacement</h2><p class="mt-4 text-muted leading-8">Bearing change support with model verification, assembly preparation and installation coordination.</p><a href="contact.html" class="inline-block mt-6 font-bold text-primary">Request Similar Work →</a></div></article><article class="bg-white rounded-2xl overflow-hidden shadow-soft"><div class="h-60 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80')"></div><div class="p-8"><span class="text-primary text-xs font-black uppercase tracking-[0.25em]">Project 03</span><h2 class="mt-3 text-2xl font-black uppercase leading-tight">Telescopic Tube Restoration</h2><p class="mt-4 text-muted leading-8">Repair and restoration of worn sections, sliding areas and critical interfaces.</p><a href="contact.html" class="inline-block mt-6 font-bold text-primary">Request Similar Work →</a></div></article><article class="bg-white rounded-2xl overflow-hidden shadow-soft"><div class="h-60 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80')"></div><div class="p-8"><span class="text-primary text-xs font-black uppercase tracking-[0.25em]">Project 04</span><h2 class="mt-3 text-2xl font-black uppercase leading-tight">Outrigger Jack Overhaul</h2><p class="mt-4 text-muted leading-8">Seal replacement, inspection and reconditioning of stability-critical jack systems.</p><a href="contact.html" class="inline-block mt-6 font-bold text-primary">Request Similar Work →</a></div></article><article class="bg-white rounded-2xl overflow-hidden shadow-soft"><div class="h-60 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80')"></div><div class="p-8"><span class="text-primary text-xs font-black uppercase tracking-[0.25em]">Project 05</span><h2 class="mt-3 text-2xl font-black uppercase leading-tight">Counterweight Fabrication</h2><p class="mt-4 text-muted leading-8">Fabrication of heavy-duty counterweights and related locking components.</p><a href="contact.html" class="inline-block mt-6 font-bold text-primary">Request Similar Work →</a></div></article><article class="bg-white rounded-2xl overflow-hidden shadow-soft"><div class="h-60 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80')"></div><div class="p-8"><span class="text-primary text-xs font-black uppercase tracking-[0.25em]">Project 06</span><h2 class="mt-3 text-2xl font-black uppercase leading-tight">Spider Beam Repair</h2><p class="mt-4 text-muted leading-8">Restoration of special lifting beam components for safe site operation.</p><a href="contact.html" class="inline-block mt-6 font-bold text-primary">Request Similar Work →</a></div></article></div>
+  </div>
+</section>
+
+<footer class="bg-slate-950 text-white pt-16 pb-10">
+      <div class="container-wrap px-6 lg:px-8 grid md:grid-cols-4 gap-10">
+        <div>
+          <div class="text-xl font-black tracking-tighter uppercase mb-4">AL RASHIDEEN</div>
+          <p class="text-slate-400 text-sm leading-7">Trusted engineering support for crane structural repair, heavy machining and field-focused workshop solutions.</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-black uppercase tracking-[0.2em] text-primary-container mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-slate-300 text-sm"><li><a href="index.html" class="hover:text-primary-container transition">Home</a></li><li><a href="about.html" class="hover:text-primary-container transition">About Us</a></li><li><a href="services.html" class="hover:text-primary-container transition">Services</a></li><li><a href="businesses.html" class="hover:text-primary-container transition">Businesses</a></li><li><a href="projects.html" class="hover:text-primary-container transition">Projects</a></li><li><a href="careers.html" class="hover:text-primary-container transition">Careers</a></li><li><a href="contact.html" class="hover:text-primary-container transition">Contact Us</a></li></ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-black uppercase tracking-[0.2em] text-primary-container mb-4">Services</h4>
+          <ul class="space-y-2 text-slate-300 text-sm"><li><a href="services.html#dismantling" class="hover:text-primary-container transition">Crane Dismantling & Reassembly</a></li><li><a href="services.html#boom-repair" class="hover:text-primary-container transition">Boom Structural Repair</a></li><li><a href="services.html#slewing" class="hover:text-primary-container transition">Slewing Bearings</a></li><li><a href="services.html#outriggers" class="hover:text-primary-container transition">Outrigger Jacks & Foot Jacks</a></li></ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-black uppercase tracking-[0.2em] text-primary-container mb-4">Contact</h4>
+          <ul class="space-y-3 text-slate-300 text-sm leading-7">
+            <li>Industrial Area, Sajaa, Sharjah, United Arab Emirates</li>
+            <li><a href="tel:+971526366779" class="hover:text-primary-container">+971 52 636 6779</a></li>
+            <li><a href="mailto:ahmadali@alrashideenengg.com" class="hover:text-primary-container">ahmadali@alrashideenengg.com</a></li>
+            <li><a href="https://wa.me/971526366779" class="hover:text-primary-container">WhatsApp Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-wrap px-6 lg:px-8 mt-12 pt-6 border-t border-slate-800 text-slate-500 text-sm">© 2026 AL RASHIDEEN Engineering Turning. All rights reserved.</div>
+    </footer>
+</body>
+</html>

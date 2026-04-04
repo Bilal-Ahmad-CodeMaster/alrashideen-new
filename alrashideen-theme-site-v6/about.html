@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<title>About Us | Al Rashideen Engineering Turning</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#705d00',
+          'primary-container': '#ffd700',
+          'on-primary-container': '#221b00',
+          background: '#fbf8ff',
+          surface: '#fbf8ff',
+          'surface-2': '#f4f2ff',
+          'surface-3': '#eeecff',
+          'surface-4': '#e7e6ff',
+          'surface-5': '#e0e0ff',
+          ink: '#181a30',
+          muted: '#4d4732',
+          outline: '#d0c6ab'
+        },
+        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        boxShadow: {
+          soft: '0 10px 40px rgba(24,26,48,.10)',
+          card: '0 14px 50px rgba(24,26,48,.12)'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Inter, sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24; }
+  .bg-grid-pattern { background-image: radial-gradient(#d0c6ab 1px, transparent 1px); background-size: 24px 24px; }
+  .container-wrap { max-width: 1400px; margin-inline: auto; }
+</style>
+</head>
+<body class="bg-surface text-ink selection:bg-primary-container selection:text-on-primary-container">
+<nav class="sticky top-0 z-50 border-b border-slate-100 bg-white/85 backdrop-blur-md shadow-sm">
+      <div class="container-wrap px-6 lg:px-8 py-4 flex items-center justify-between gap-6">
+        <a href="index.html" class="text-xl md:text-2xl font-black tracking-tighter uppercase text-slate-900">AL RASHIDEEN</a>
+        <div class="hidden lg:flex items-center gap-7"><a href="index.html" class="text-sm tracking-tight text-slate-600 hover:text-slate-900 font-medium">Home</a><a href="about.html" class="text-sm tracking-tight text-yellow-600 border-b-2 border-yellow-500 pb-1 font-bold">About Us</a><a href="services.html" class="text-sm tracking-tight text-slate-600 hover:text-slate-900 font-medium">Services</a><a href="businesses.html" class="text-sm tracking-tight text-slate-600 hover:text-slate-900 font-medium">Businesses</a><a href="projects.html" class="text-sm tracking-tight text-slate-600 hover:text-slate-900 font-medium">Projects</a><a href="careers.html" class="text-sm tracking-tight text-slate-600 hover:text-slate-900 font-medium">Careers</a><a href="contact.html" class="text-sm tracking-tight text-slate-600 hover:text-slate-900 font-medium">Contact Us</a></div>
+        <div class="flex items-center gap-3">
+          <a href="contact.html#enquiry" class="px-4 py-2 rounded-lg bg-primary-container text-on-primary-container text-sm font-bold">Enquiry</a>
+          <a href="contact.html" class="px-4 py-2 rounded-lg border border-outline text-sm font-bold text-ink">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+<section class="bg-ink text-white py-24">
+  <div class="container-wrap px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-primary-container text-sm font-black uppercase tracking-[0.3em] mb-4">About Us</p>
+      <h1 class="text-5xl md:text-6xl font-black uppercase tracking-tight">Engineering-Focused Website Theme</h1>
+      <p class="mt-8 text-white/75 text-lg leading-8">This page keeps the same bold yellow, black and industrial design language from your uploaded homepage theme and extends it into a full multi-page website structure.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=80" alt="Heavy workshop" class="w-full h-[460px] object-cover shadow-card">
+  </div>
+</section>
+<section class="py-24 bg-white">
+  <div class="container-wrap px-6 lg:px-8 grid lg:grid-cols-2 gap-14">
+    <div>
+      <p class="text-primary text-sm font-black uppercase tracking-[0.3em] mb-4">Who We Are</p>
+      <h2 class="text-4xl font-black uppercase tracking-tight">Trusted Heavy Engineering Support</h2>
+      <p class="mt-6 text-muted leading-8">Al Rashideen Engineering Turning is positioned as a specialist workshop brand for crane structural work, precision turning, heavy fabrication and component restoration. The site language is built to feel technical, strong and industrial.</p>
+      <p class="mt-5 text-muted leading-8">You can replace this paragraph with your exact company history, certifications, customer sectors and workshop capability details once you finalize the content.</p>
+    </div>
+    <div class="bg-surface-2 rounded-2xl p-8 shadow-soft">
+      <h3 class="text-2xl font-black uppercase mb-6">Highlights</h3>
+      <div class="space-y-5"><div class="flex gap-4"><span class="material-symbols-outlined text-primary">check_circle</span><p class="text-muted">Crane boom repair and structural restoration</p></div><div class="flex gap-4"><span class="material-symbols-outlined text-primary">check_circle</span><p class="text-muted">Workshop-based heavy machining support</p></div><div class="flex gap-4"><span class="material-symbols-outlined text-primary">check_circle</span><p class="text-muted">Brand-aligned yellow industrial visual theme</p></div><div class="flex gap-4"><span class="material-symbols-outlined text-primary">check_circle</span><p class="text-muted">Multi-page structure ready for deployment</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="py-24 bg-grid-pattern">
+  <div class="container-wrap px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-6"><div class="bg-white p-8 rounded-2xl shadow-soft"><div class="text-5xl font-black text-primary-container mb-4">01</div><h3 class="font-black uppercase text-xl">Technical Positioning</h3><p class="mt-4 text-muted leading-7">Built for crane repair, heavy equipment and industrial engineering audiences.</p></div><div class="bg-white p-8 rounded-2xl shadow-soft"><div class="text-5xl font-black text-primary-container mb-4">02</div><h3 class="font-black uppercase text-xl">Modern Presentation</h3><p class="mt-4 text-muted leading-7">Clear sections, strong typography and a premium industrial layout.</p></div><div class="bg-white p-8 rounded-2xl shadow-soft"><div class="text-5xl font-black text-primary-container mb-4">03</div><h3 class="font-black uppercase text-xl">Editable Structure</h3><p class="mt-4 text-muted leading-7">Every page is plain HTML so your developer can edit it quickly.</p></div></div>
+  </div>
+</section>
+
+<footer class="bg-slate-950 text-white pt-16 pb-10">
+      <div class="container-wrap px-6 lg:px-8 grid md:grid-cols-4 gap-10">
+        <div>
+          <div class="text-xl font-black tracking-tighter uppercase mb-4">AL RASHIDEEN</div>
+          <p class="text-slate-400 text-sm leading-7">Trusted engineering support for crane structural repair, heavy machining and field-focused workshop solutions.</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-black uppercase tracking-[0.2em] text-primary-container mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-slate-300 text-sm"><li><a href="index.html" class="hover:text-primary-container transition">Home</a></li><li><a href="about.html" class="hover:text-primary-container transition">About Us</a></li><li><a href="services.html" class="hover:text-primary-container transition">Services</a></li><li><a href="businesses.html" class="hover:text-primary-container transition">Businesses</a></li><li><a href="projects.html" class="hover:text-primary-container transition">Projects</a></li><li><a href="careers.html" class="hover:text-primary-container transition">Careers</a></li><li><a href="contact.html" class="hover:text-primary-container transition">Contact Us</a></li></ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-black uppercase tracking-[0.2em] text-primary-container mb-4">Services</h4>
+          <ul class="space-y-2 text-slate-300 text-sm"><li><a href="services.html#dismantling" class="hover:text-primary-container transition">Crane Dismantling & Reassembly</a></li><li><a href="services.html#boom-repair" class="hover:text-primary-container transition">Boom Structural Repair</a></li><li><a href="services.html#slewing" class="hover:text-primary-container transition">Slewing Bearings</a></li><li><a href="services.html#outriggers" class="hover:text-primary-container transition">Outrigger Jacks & Foot Jacks</a></li></ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-black uppercase tracking-[0.2em] text-primary-container mb-4">Contact</h4>
+          <ul class="space-y-3 text-slate-300 text-sm leading-7">
+            <li>Industrial Area, Sajaa, Sharjah, United Arab Emirates</li>
+            <li><a href="tel:+971526366779" class="hover:text-primary-container">+971 52 636 6779</a></li>
+            <li><a href="mailto:ahmadali@alrashideenengg.com" class="hover:text-primary-container">ahmadali@alrashideenengg.com</a></li>
+            <li><a href="https://wa.me/971526366779" class="hover:text-primary-container">WhatsApp Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-wrap px-6 lg:px-8 mt-12 pt-6 border-t border-slate-800 text-slate-500 text-sm">© 2026 AL RASHIDEEN Engineering Turning. All rights reserved.</div>
+    </footer>
+</body>
+</html>
