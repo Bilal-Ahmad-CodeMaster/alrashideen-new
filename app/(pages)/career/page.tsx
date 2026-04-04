@@ -35,7 +35,7 @@ const CareersPage = () => {
               <div className="flex flex-row justify-between items-center gap-4">
                 <div className="flex-1">
                   <p className="text-[#ffd700] text-xs font-black uppercase tracking-[0.25em]">Open Position</p>
-                  <h2 className="mt-2 text-2xl font-black uppercase text-[#181a30]">Crane Electrician / Diagnostic Technician</h2>
+                  <h2 className="mt-2 text-lg md:text-2xl font-black uppercase text-[#181a30]">Crane Electrician / Diagnostic Technician</h2>
                 </div>
                 <Link
                   href="/contact#job"
@@ -54,7 +54,7 @@ const CareersPage = () => {
               <div className="flex flex-row justify-between items-center gap-4">
                 <div className="flex-1">
                   <p className="text-[#ffd700] text-xs font-black uppercase tracking-[0.25em]">Open Position</p>
-                  <h2 className="mt-2 text-2xl font-black uppercase text-[#181a30]">Diesel Mechanic</h2>
+                  <h2 className="mt-2 text-lg md:text-2xl font-black uppercase text-[#181a30]">Diesel Mechanic</h2>
                 </div>
                 <Link
                   href="/contact#inquiry"
@@ -73,7 +73,7 @@ const CareersPage = () => {
               <div className="flex flex-row justify-between items-center gap-4">
                 <div className="flex-1">
                   <p className="text-[#ffd700] text-xs font-black uppercase tracking-[0.25em]">Open Position</p>
-                  <h2 className="mt-2 text-2xl font-black uppercase text-[#181a30]">Lathe Machine Operator</h2>
+                  <h2 className="mt-2 text-lg md:text-2xl font-black uppercase text-[#181a30]">Lathe Machine Operator</h2>
                 </div>
                 <Link
                   href="/contact#inquiry"
@@ -92,7 +92,7 @@ const CareersPage = () => {
               <div className="flex flex-row justify-between items-center gap-4">
                 <div className="flex-1">
                   <p className="text-[#ffd700] text-xs font-black uppercase tracking-[0.25em]">Open Position</p>
-                  <h2 className="mt-2 text-2xl font-black uppercase text-[#181a30]">Workshop Supervisor</h2>
+                  <h2 className="mt-2 text-lg md:text-2xl font-black uppercase text-[#181a30]">Workshop Supervisor</h2>
                 </div>
                 <Link
                   href="/contact#job"

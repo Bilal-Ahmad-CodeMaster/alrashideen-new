@@ -43,7 +43,7 @@ const Projects = () => {
       {/* Image Preview Overlay */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 cursor-zoom-out"
+          className="fixed inset-0 z-999 flex items-center justify-center bg-black/90 p-4 cursor-zoom-out"
           onClick={() => setSelectedImage(null)}
         >
           <div className="relative max-w-5xl w-full h-full flex items-center justify-center">
@@ -91,18 +91,17 @@ const Projects = () => {
       <section className="py-20 bg-[#f6f7fb] grid-dots min-h-[600px]">
         <div className="container-wrap px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12 border-b border-slate-200 pb-12">
-            <div className="max-w-3xl">
-              <p className="text-yellow-700 text-sm font-black uppercase tracking-[0.28em] mb-3">
-                Al Rashideen Engineering Group
-              </p>
-              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-[#0f1738] mb-6">
-                Project Portfolio
-              </h2>
+            <div className=" flex md:flex-row flex-col justify-between w-full">
+              <div className="max-w-3xl">
+                <p className="text-yellow-700 text-sm font-black uppercase tracking-[0.28em] mb-3">
+                  Al Rashideen Engineering Group
+                </p>
+                <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-[#0f1738] mb-6">
+                  Project Portfolio
+                </h2>
+              </div>
               {/* Restored Line Below */}
-              <p className="max-w-2xl text-slate-600 text-lg leading-8">
-                This page now feels closer to the businesses page with the same
-                premium industrial style. Each card showcases completed projects
-                and can be updated with real workshop photos.
+              <p className="max-w-2xl text-slate-600 text-lg leading-8">Driving industrial uptime through expert engineering. Our showcase highlights a legacy of complex crane logistics and bespoke machinery repairs that keep the construction sector moving. Where heavy industry meets elite craftsmanship
               </p>
             </div>
           </div>

@@ -161,7 +161,7 @@ export const HomePage = () => {
             {recentProjects.slice(0, 3).map((project, idx) => (
               <Link
                 key={project._id}
-                href="/projects"
+                href="/project"
                 className={`${idx === 0 ? 'lg:col-span-3 lg:row-span-2' : 'lg:col-span-2'} relative rounded-[12px] overflow-hidden group bg-ink min-h-[300px]`}
               >
                 <Image src={project.image || "/assets/placeholder.webp"} alt={project.title} fill className="object-cover group-hover:scale-105 transition duration-700" />
