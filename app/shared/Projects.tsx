@@ -69,14 +69,14 @@ const Projects = () => {
         <div className="relative container-wrap px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-5xl">
             <div className="inline-flex items-center gap-3 px-4 py-2 border border-yellow-400/20 rounded-lg bg-white/5 mb-8">
-              <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
-              <span className="text-primary text-xs md:text-sm font-black uppercase tracking-[0.28em]">
+              <span className="w-2.5 h-2.5 rounded-full bg-[var(--primary-container)] animate-pulse"></span>
+              <span className="text-[var(--primary-container)] text-xs md:text-sm font-black uppercase tracking-[0.28em]">
                 Project Showcase
               </span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight leading-none text-white">
               Our Projects <br />
-              <span className="text-primary">Portfolio</span>
+              <span className="text-[var(--primary-container)]">Portfolio</span>
             </h1>
             <p className="mt-8 max-w-4xl text-xl leading-9 text-yellow-300 font-medium">
               Showcase of completed crane repairs, structural work, and
@@ -91,7 +91,7 @@ const Projects = () => {
       <section className="py-20 bg-[#f6f7fb] grid-dots min-h-[600px]">
         <div className="container-wrap px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12 border-b border-slate-200 pb-12">
-            <div className=" flex md:flex-row flex-col justify-between w-full">
+            <div className=" flex md:flex-row flex justify-between w-full">
               <div className="max-w-3xl">
                 <p className="text-yellow-700 text-sm font-black uppercase tracking-[0.28em] mb-3">
                   Al Rashideen Engineering Group

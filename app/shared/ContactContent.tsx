@@ -72,12 +72,12 @@ export const ContactContent = () => {
 
           <div className="container-wrap relative z-20 px-6 lg:px-8 text-center lg:text-left">
             <div className="max-w-3xl">
-              <span className="text-primary font-black uppercase tracking-[0.4em] text-xs mb-4 block">
+              <span className="text-[var(--primary-container)] font-black uppercase tracking-[0.4em] text-xs mb-4 block">
                 Connect with us
               </span>
               <h1 className="text-4xl md:text-6xl font-black text-white uppercase leading-tight tracking-tight">
                 Get Your Project <br />
-                <span className="text-primary">Moving Today</span>
+                <span className="text-[var(--primary-container)]">Moving Today</span>
               </h1>
               <p className="mt-6 text-lg text-slate-300 max-w-xl leading-relaxed">
                 Professional heavy equipment rental and industrial engineering solutions across the UAE.

@@ -26,101 +26,101 @@ export const ServiceContent = () => {
         setLoading(false);
       }
     };
-
     fetchServices();
   }, []);
+
+  const getInitials = (title: string) => {
+    return title
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase()
+      .slice(0, 2);
+  };
 
   return (
     <>
       <Toaster position="top-right" />
-      <header className="hero-pattern py-18 sm:py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <span className="text-white font-bold tracking-widest uppercase mb-4 block">
-            Our Capabilities
-          </span>
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
-            Engineering <span className="text-primary">Services</span>
-          </h1>
-          <p className="text-base sm:text-lg text-slate-300 mt-6 max-w-2xl leading-relaxed">
-            Advanced crane boom repair and structural reinforcement solutions
-            engineered for high-capacity lifting equipment. Our facility
-            combines state-of-the-art machinery, OEM-grade materials, and expert
-            technicians to deliver reliable, safety-compliant structural
-            performance.
-          </p>
-        </div>
-      </header>
 
-      {/* Services Section */}
-      <section
-        id="services"
-        className="bg-linear-to-b from-[bg-primary] via-white to-gray-200 text-gray-800 py-16 sm:py-20"
-      >
-        <div className="max-w-7xl mx-auto px-4">
-          {/* HEADER */}
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-8 sm:mb-16">
-            <div className="max-w-2xl">
-              <h3 className="text-3xl lg:text-4xl font-bold text-secondary mb-4">
-                Our Services
-              </h3>
-              <p className="text-white leading-relaxed">
-                Our team combines extensive field experience with advanced
-                technical expertise in structural configurations, boom systems,
-                and load-bearing assemblies across globally recognized OEM crane
-                manufacturers such as Liebherr, Terex, XCMG, Grove, Tadano,
-                Zoomlion, SANY, Kobelco, Kato, Manitowoc, and other major heavy
-                lifting brands.
-              </p>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-secondary">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,215,0,.16),transparent_30%),linear-gradient(90deg,rgba(10,18,48,.96),rgba(10,18,48,.90),rgba(10,18,48,.84))]"></div>
+        <div className="relative container-wrap px-6 lg:px-8 py-24 lg:py-32 text-white">
+          <div className="max-w-5xl">
+            <div className="inline-flex items-center gap-3 px-4 py-2 border border-[var(--primary-container)]/40 rounded-lg bg-primary-container/10 mb-8">
+              <span className="w-2.5 h-2.5 rounded-full bg-[var(--primary-container)]"></span>
+              <span className="text-[var(--primary-container)] text-xs md:text-sm font-black uppercase tracking-[0.28em]">Our Capabilities</span>
             </div>
-
-            <a
-              href="https://wa.me/971526366779"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-secondary text-white px-8 py-3 rounded-full font-medium
-                       hover:bg-black transition shadow-lg"
-            >
-              Send Photos on WhatsApp
-            </a>
+            <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight leading-none">Engineering Services <br /><span className="text-[var(--primary-container)]">For Crane Systems</span></h1>
+            <p className="mt-8 max-w-4xl text-xl leading-9 text-[var(--primary-container)]">Advanced crane boom repair, structural reinforcement, and hydraulic restoration for mobile and crawler crane systems.</p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link href="/contact#enquiry" className="px-8 py-4 bg-[var(--primary-container)] text-black font-black text-sm uppercase tracking-[0.18em] transition-transform active:scale-95">Request Enquiry</Link>
+              <a href="https://wa.me/971526366779" target="_blank" rel="noopener noreferrer" className="px-8 py-4 border border-white/20 text-white font-black text-sm uppercase tracking-[0.18em] hover:bg-white/5">Send Photos On WhatsApp</a>
+            </div>
           </div>
+        </div>
+      </section>
 
-
-          <div className="grid gap-6 sm:gap-8 lg:gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Services Grid */}
+      <section className="py-20 bg-[#f6f7fb] grid-dots">
+        <div className="container-wrap px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 items-stretch">
             {loading ? (
-              <div className="col-span-full py-20 text-center text-white">Loading Infrastructure...</div>
+              <div className="col-span-full py-20 text-center text-slate-400 font-black tracking-widest">LOADING CAPABILITIES...</div>
             ) : (
-              services.map((service) => (
-                <div key={service._id} className="group relative rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col h-[500px] border border-secondary/20 bg-white">
-                  <div
-                    className="h-1/2 w-full bg-cover bg-center relative transition-transform duration-500 group-hover:scale-105"
-                    style={{ backgroundImage: `url(${service.galleryImages?.[0]?.image || ""})` }}
-                  >
-                    <div className="absolute inset-0 bg-black/25 group-hover:bg-black/10 transition-all"></div>
-                  </div>
+              services.map((service, index) => (
+                <article
+                  key={service._id}
+                  className="group flex flex-col bg-white rounded-[1.75rem] overflow-hidden shadow-[0_20px_55px_rgba(8,15,40,.10)] border border-slate-200 transition-all duration-300 hover:-translate-y-2"
+                >
+                  <Link href={`/service/${service._id}`} className="block relative h-64 overflow-hidden">
+                    {/* Background Image with Ink Gradient Overlay */}
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                      style={{ backgroundImage: `url(${service.galleryImages?.[0]?.image || ""})` }}
+                    />
+                    {/* The "Ink" Gradient: Darkens top and bottom to make text pop */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80"></div>
 
-                  <div className="h-1/2 p-6 flex flex-col relative z-10">
-                    <h4 className="text-xl font-bold text-black mb-2 group-hover:text-primary transition-colors">
+                    {/* Overlay Content */}
+                    <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                      <div className="text-[var(--primary-container)] text-xs font-black uppercase tracking-[0.28em] drop-shadow-md">
+                        {service.bulletPoints?.[0] || "Specialized Service"}
+                      </div>
+
+                      <div className="flex justify-between items-end">
+                        <div className="w-16 h-16 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md flex items-center justify-center text-white font-black text-xl">
+                          {getInitials(service.title)}
+                        </div>
+                        <div className="text-[var(--primary-container)] text-xs font-black uppercase tracking-[0.28em]">
+                          Service {String(index + 1).padStart(2, '0')}
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+
+                  {/* Text Content Area */}
+                  <div className="flex flex-col flex-grow p-8 md:p-9">
+                    <span className="text-yellow-700 text-xs font-black uppercase tracking-[0.26em]">Engineering Service</span>
+                    <h2 className="mt-4 text-[1.75rem] leading-tight font-black uppercase text-[#0f1738] group-hover:text-yellow-700 transition-colors">
                       {service.title}
-                    </h4>
-                    <div className="text-sm text-secondary/70 mb-4 italic leading-relaxed">
-                      {service.bulletPoints && service.bulletPoints.length > 0
-                        ? service.bulletPoints.map((point: string) => point.trim()).join(" • ")
-                        : "Advanced Engineering Solution"}
-                    </div>
-                    <div className="text-xs text-secondary/60 border-t border-secondary/10 pt-4 mb-4 italic line-clamp-2">
+                    </h2>
+                    <p className="mt-5 text-slate-600 text-base leading-7 line-clamp-3">
                       {service.description}
+                    </p>
+
+                    {/* This pushes the button to the absolute bottom of the card */}
+                    <div className="mt-auto pt-8">
+                      <Link
+                        href={`/service/${service._id}`}
+                        className="inline-flex items-center font-bold text-yellow-700 hover:gap-3 transition-all"
+                      >
+                        Open Detailed Service
+                        <span className="ml-2">→</span>
+                      </Link>
                     </div>
-                    <Link
-                      href={`/service/${service._id}`}
-                      className="mt-auto inline-flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary text-white font-bold text-sm rounded-lg transition-all active:scale-95"
-                    >
-                      View Details
-                      <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
-                        arrow_forward
-                      </span>
-                    </Link>
                   </div>
-                </div>
+                </article>
               ))
             )}
           </div>

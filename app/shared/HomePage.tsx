@@ -39,7 +39,33 @@ export const HomePage = () => {
   useEffect(() => {
     fetchData();
   }, [fetchData]);
+  const businesses = [
+    {
+      id: 2,
+      image: "/assets/buisnesses/logo1.png",
+    },
 
+    {
+      id: 3,
+      image: "/assets/buisnesses/logo5.jpg",
+    },
+    {
+      id: 4,
+      image: "/assets/buisnesses/logo3.png",
+    },
+    {
+      id: 1,
+      image: "/assets/buisnesses/logo2.png",
+    },
+    {
+      id: 5,
+      image: "/assets/buisnesses/logo6.jpg",
+    },
+    {
+      id: 6,
+      image: "/assets/buisnesses/logo4.png",
+    },
+  ];
   const steps = [
     { step: "01", title: "Inquiry", icon: "mail", desc: "Initial requirement analysis and documentation gathering." },
     { step: "02", title: "Inspection", icon: "search", desc: "On-site or workshop technical assessment and NDT testing." },
@@ -56,7 +82,7 @@ export const HomePage = () => {
 
   return (
     <>
-   <HomeHero banners={banners}/>
+      <HomeHero banners={banners} />
       {/* ================= CORE EXPERTISE ================= */}
       <section className="py-24 bg-grid-pattern">
         <div className="container-wrap px-6 lg:px-8">
@@ -203,20 +229,38 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* ================= PARTNERS ================= */}
-      <section className="py-16 bg-[var(--surface-2)] border-y border-[var(--outline)]/30">
-        <div className="container-wrap px-6 lg:px-8 text-center">
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-[var(--muted)] italic mb-10">Our Strategic Partners & Businesses</p>
-          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {partners.map((partner, i) => (
-              <div key={i} className="bg-white rounded-xl px-4 py-6 font-bold text-sm shadow-soft flex items-center justify-center min-h-[80px]">
-                {partner}
-              </div>
-            ))}
-          </div>
+
+      <section className="overflow-hidden bg-white py-10">
+        <div className="text-center mb-6">
+          <h2 className="text-[rgba(20_49_117)]! text-xl md:text-2xl font-bold tracking-wide">
+            Our Businesses
+          </h2>
+          <div className="w-16 h-1 bg-secondary mx-auto mt-2 rounded"></div>
+        </div>
+
+        <div
+          className=" flex flex-nowrap gap-6 py-5 px-4 no-scrollbar
+    overflow-x-auto justify-start
+    [@media(min-width:1300px)]:justify-center
+    [@media(min-width:1300px)]:overflow-visible"
+        >
+          {businesses.map((item) => (
+            <Link
+              key={item.id}
+              href={"/industry"}
+              className="w-48 h-32 bg-white rounded-xl flex items-center justify-center shrink-0
+                   shadow-[0_4px_6px_rgba(75,85,99,0.05),0_10px_15px_rgba(75,85,99,0.1),0_18px_36px_rgba(75,85,99,0.08)] transition-transform cursor-pointer"
+            >
+              <Image
+                src={item.image}
+                alt={`Business ${item.id}`}
+                fill
+                className="max-h-20 object-contain relative!"
+              />
+            </Link>
+          ))}
         </div>
       </section>
-
       {/* ================= CTA ================= */}
       <section className="py-24 bg-surface">
         <div className="container-wrap px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">

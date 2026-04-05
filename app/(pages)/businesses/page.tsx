@@ -62,7 +62,7 @@ const BusinessesPage = () => {
 
     return (
         <main className="min-h-screen bg-white">
-            
+
             <section className="relative overflow-hidden bg-[#0a1230] py-24 lg:py-32">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,215,0,.16),transparent_30%),linear-gradient(90deg,rgba(10,18,48,.96),rgba(10,18,48,.90),rgba(10,18,48,.84))]"></div>
                 <div className="relative container-wrap px-6 lg:px-8">
@@ -76,29 +76,57 @@ const BusinessesPage = () => {
                 </div>
             </section>
 
-            <section className="py-20 bg-[#f6f7fb]">
+            <section className="py-16 bg-[#f8f9fc]">
                 <div className="container-wrap px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    {/* Updated grid to xl:grid-cols-4 for a more compact feel */}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         {businessUnits.map((item, index) => (
-                            <article key={index} className="group flex flex-col bg-white rounded-[1.75rem] overflow-hidden shadow-lg border border-slate-200 transition-all hover:shadow-2xl hover:-translate-y-1">
-                                <div className="relative h-54 overflow-hidden bg-[linear-gradient(135deg,#09112f,#13235e_58%,#0c1535)] p-8 flex flex-col justify-between">
-                                    <div className="text-yellow-400 text-xs font-black uppercase tracking-[0.28em]">Group Business {item.id}</div>
-                                    <div className="flex items-center gap-5">
-                                        <div className="w-20 h-20 md:w-24 md:h-24 rounded-[1.8rem] bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 overflow-hidden">
-                                            <img
-                                                src={item.logo}
-                                                alt="logo"
-                                                className="w-full h-full object-fit"
-                                            />
-                                        </div>
-                                        <div className="text-white text-xs font-black uppercase tracking-[0.22em]">Official Unit</div>
+                            <article key={index} className="group flex flex-col bg-white rounded-[1.5rem] overflow-hidden shadow-[0_4px_15px_rgba(0,0,0,0.02)] border border-slate-100 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1.5">
+
+                                {/* REDUCED LOGO PEDESTAL */}
+                                <div className="relative h-40 flex items-center justify-center bg-white border-b border-slate-50 shrink-0">
+
+                                    {/* Pedestal Shadow Effect - Scaled down */}
+                                    <div className="absolute bottom-6 w-20 h-3 bg-slate-200/20 blur-lg rounded-full"></div>
+
+                                    {/* Logo Container - Smaller size */}
+                                    <div className="relative z-10 w-58 h-38 flex items-center justify-center p-4 transition-all duration-500 group-hover:scale-105">
+                                        <img
+                                            src={item.logo}
+                                            alt={`${item.title} logo`}
+                                            className="max-w-full max-h-full object-contain filter drop-shadow-[0_5px_10px_rgba(0,0,0,0.03)]"
+                                        />
+                                    </div>
+
+                                    {/* Status Indicator - More subtle */}
+                                    <div className="absolute top-4 right-4 flex items-center gap-1.5">
+                                        <span className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse"></span>
+                                        <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Live</span>
                                     </div>
                                 </div>
-                                <div className="p-8 flex flex-col flex-grow">
-                                    <span className="text-yellow-700 text-xs font-black uppercase tracking-[0.26em]">{item.location}</span>
-                                    <h2 className="mt-4 text-[1.6rem] font-black uppercase text-[#0f1738]">{item.title}</h2>
-                                    <p className="mt-5 text-slate-600 leading-relaxed mb-8 flex-grow">{item.desc}</p>
-                                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="w-full text-center py-4 rounded-xl bg-[#ffd700] text-[#0a1230] font-black uppercase text-xs tracking-[0.2em] transition-all hover:bg-black hover:text-white">
+
+                                {/* COMPACT CONTENT SECTION */}
+                                <div className="p-6 flex flex-col flex-grow">
+                                    <div className="flex items-center mb-3">
+                                        <span className="px-2 py-0.5 rounded-md bg-slate-100 text-slate-500 text-[8px] font-black uppercase tracking-widest">
+                                            {item.location}
+                                        </span>
+                                    </div>
+
+                                    <h2 className="text-xl font-black uppercase text-[#0f1738] tracking-tight leading-tight">
+                                        {item.title}
+                                    </h2>
+
+                                    <p className="mt-3 text-slate-500 text-[13px] leading-relaxed mb-6 flex-grow font-medium line-clamp-3">
+                                        {item.desc}
+                                    </p>
+
+                                    <a
+                                        href={item.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="relative flex items-center justify-center w-full py-3.5 rounded-xl bg-[#0f1738] text-white font-black uppercase text-[9px] tracking-[0.2em] transition-all duration-300 hover:bg-yellow-400 hover:text-[#0f1738] active:scale-95"
+                                    >
                                         Visit Site
                                     </a>
                                 </div>
