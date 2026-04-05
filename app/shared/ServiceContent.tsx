@@ -42,20 +42,56 @@ export const ServiceContent = () => {
     <>
       <Toaster position="top-right" />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-secondary">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,215,0,.16),transparent_30%),linear-gradient(90deg,rgba(10,18,48,.96),rgba(10,18,48,.90),rgba(10,18,48,.84))]"></div>
-        <div className="relative container-wrap px-6 lg:px-8 py-24 lg:py-32 text-white">
-          <div className="max-w-5xl">
-            <div className="inline-flex items-center gap-3 px-4 py-2 border border-[var(--primary-container)]/40 rounded-lg bg-primary-container/10 mb-8">
-              <span className="w-2.5 h-2.5 rounded-full bg-[var(--primary-container)]"></span>
-              <span className="text-[var(--primary-container)] text-xs md:text-sm font-black uppercase tracking-[0.28em]">Our Capabilities</span>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight leading-none">Engineering Services <br /><span className="text-[var(--primary-container)]">For Crane Systems</span></h1>
-            <p className="mt-8 max-w-4xl text-xl leading-9 text-[var(--primary-container)]">Advanced crane boom repair, structural reinforcement, and hydraulic restoration for mobile and crawler crane systems.</p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/contact#enquiry" className="px-8 py-4 bg-[var(--primary-container)] text-black font-black text-sm uppercase tracking-[0.18em] transition-transform active:scale-95">Request Enquiry</Link>
-              <a href="https://wa.me/971526366779" target="_blank" rel="noopener noreferrer" className="px-8 py-4 border border-white/20 text-white font-black text-sm uppercase tracking-[0.18em] hover:bg-white/5">Send Photos On WhatsApp</a>
+      <section className="relative min-h-[60vh] lg:h-[850px] flex items-center overflow-hidden bg-[#181a30]">
+        {/* Background Layer with Consistent Gradients */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[#111936]/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#111936]/40 via-[#111936]/20 to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,215,0,.12),transparent_50%)]"></div>
+        </div>
+
+        <div className="relative z-10 w-full">
+          <div className="max-w-[1680px] mx-auto px-6 md:px-12 xl:px-16 2xl:px-24">
+            <div className="max-w-[1100px]">
+
+              {/* 1. Tagline Badge - Synced with Home Style */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-[#ffd700]/25 bg-[#ffd700]/10 rounded-sm mb-8">
+                <span className="w-2 h-2 rounded-full bg-[#ffd700] animate-pulse"></span>
+                <span className="text-[#ffd700] text-[10px] md:text-sm font-black uppercase tracking-[0.25em]">
+                  Our Capabilities
+                </span>
+              </div>
+
+              {/* 2. Main Heading - Exact Scaling & Italic Style */}
+              <h1 className="text-[44px] leading-[0.92] sm:text-[78px] md:text-[96px] xl:text-[112px] font-black text-white uppercase tracking-[-0.05em] italic">
+                Engineering Services<br />
+                <span className="text-[#ffd700]">For Crane Systems</span>
+              </h1>
+
+              {/* 3. Description - Precise Font Size, Gold Color, and Left Anchor */}
+              <p className="mt-8 max-w-[750px] text-[18px] leading-[1.3] md:text-[24px] text-[#ffd700] border-l-[4px] border-[#ffd700] pl-5">
+                Advanced crane boom repair, structural reinforcement, and hydraulic restoration
+                for mobile and crawler crane systems. Precision engineering for heavy-duty performance.
+              </p>
+
+              {/* 4. CTA Buttons - Synced with Home Page Styles */}
+              <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/contact#enquiry"
+                  className="text-center px-8 py-4 bg-[#ffd700] text-[#221b00] font-black text-xs md:text-sm uppercase tracking-[0.2em] hover:scale-105 transition-transform"
+                >
+                  Request Enquiry
+                </Link>
+                <a
+                  href="https://wa.me/971526366779"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-center px-8 py-4 border border-white/30 text-white font-black text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-white/10 transition-colors"
+                >
+                  Send Photos On WhatsApp
+                </a>
+              </div>
+
             </div>
           </div>
         </div>
@@ -63,7 +99,7 @@ export const ServiceContent = () => {
 
       {/* Services Grid */}
       <section className="py-20 bg-[#f6f7fb] grid-dots">
-        <div className="container-wrap px-6 lg:px-8">
+        <div className="container-wrap px-6 lg:px-14">
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 items-stretch">
             {loading ? (
               <div className="col-span-full py-20 text-center text-slate-400 font-black tracking-widest">LOADING CAPABILITIES...</div>

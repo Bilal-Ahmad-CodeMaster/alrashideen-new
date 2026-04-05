@@ -58,7 +58,7 @@ function HomeHero({ banners }: HomeHeroProps) {
 
                                 {/* Dark Overlays for Text Contrast */}
                                 <div className="absolute inset-0 bg-[#111936]/60" />
-                                <div className="absolute inset-0 bg-gradient-to-r from-[#111936]/95 via-[#111936]/40 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-r from-[#111936]/15 via-[#111936]/10 to-transparent" />
                             </SwiperSlide>
                         ))
                     ) : (
@@ -111,7 +111,7 @@ function HomeHero({ banners }: HomeHeroProps) {
                     <div className="mt-2 text-white/65 text-xs uppercase tracking-[0.35em]">Years of Expertise</div>
                 </div>
                 <div>
-                    <div className="text-6xl font-black text-[#ffd700] leading-none">1200+</div>
+                    <div className="text-6xl font-black text-[#ffd700] leading-none">5000+</div>
                     <div className="mt-2 text-white/65 text-xs uppercase tracking-[0.35em]">Projects Completed</div>
                 </div>
             </div>

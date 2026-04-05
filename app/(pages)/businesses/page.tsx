@@ -63,33 +63,62 @@ const BusinessesPage = () => {
     return (
         <main className="min-h-screen bg-white">
 
-            <section className="relative overflow-hidden bg-[#0a1230] py-24 lg:py-32">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,215,0,.16),transparent_30%),linear-gradient(90deg,rgba(10,18,48,.96),rgba(10,18,48,.90),rgba(10,18,48,.84))]"></div>
-                <div className="relative container-wrap px-6 lg:px-8">
-                    <div className="max-w-5xl">
-                        <div className="inline-flex items-center gap-3 px-4 py-2 border border-[#ffd700]/40 rounded-lg bg-[#ffd700]/10 mb-8">
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#ffd700]"></span>
-                            <span className="text-[#ffd700] text-xs md:text-sm font-black uppercase tracking-[0.28em]">Group Presence</span>
+            <section className="relative min-h-[60vh] lg:h-[623px] flex items-center overflow-hidden bg-[#181a30]">
+                {/* Background Layer with Home Page Gradients */}
+                <div className="absolute inset-0 z-0">
+                    <div className="absolute inset-0 bg-[#111936]/60" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#111936]/40 via-[#111936]/20 to-transparent" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,215,0,.12),transparent_50%)]"></div>
+                </div>
+
+                <div className="relative z-10 w-full">
+                    <div className="max-w-[1680px] mx-auto px-6 md:px-12 xl:px-16 2xl:px-24">
+                        <div className="max-w-[1100px]">
+
+                            {/* 1. Tagline - Matches Home Page Styles */}
+                            <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-[#ffd700]/25 bg-[#ffd700]/10 rounded-sm mb-8">
+                                <span className="w-2 h-2 rounded-full bg-[#ffd700] animate-pulse"></span>
+                                <span className="text-[#ffd700] text-[10px] md:text-sm font-black uppercase tracking-[0.25em]">
+                                    Group Presence
+                                </span>
+                            </div>
+
+                            {/* 2. Main Heading - Matches Home Page Font Sizes and Italic Style */}
+                            <h1 className="text-[44px] leading-[0.92] sm:text-[78px] md:text-[96px] xl:text-[112px] font-black text-white uppercase tracking-[-0.05em] italic">
+                                Our Businesses<br />
+                                & <span className="text-[#ffd700]">Locations</span>
+                            </h1>
+
+                            {/* 3. Description - Matches Home Page Font Size, Color, and Left Border */}
+                            <p className="mt-8 max-w-[750px] text-[18px] leading-[1.3] md:text-[24px] text-[#ffd700] border-l-[4px] border-[#ffd700] pl-5">
+                                Al Rashideen Engineering Turning is part of the Al Rashideen Engineering Group in Sharjah, UAE.
+                                Our group spans lubricants, engineering, spare parts, machinery maintenance, and manufacturing,
+                                delivering reliable, industry-focused solutions.
+                            </p>
+
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tight leading-none text-white">Our Businesses</h1>
                     </div>
                 </div>
             </section>
 
             <section className="py-16 bg-[#f8f9fc]">
-                <div className="container-wrap px-6 lg:px-8">
-                    {/* Updated grid to xl:grid-cols-4 for a more compact feel */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div className="container-wrap px-6 lg:px-14">
+                    {/* Changed from 'grid' to 'flex flex-wrap' to allow 'justify-center' to affect the last line */}
+                    <div className="flex flex-wrap justify-center gap-6">
                         {businessUnits.map((item, index) => (
-                            <article key={index} className="group flex flex-col bg-white rounded-[1.5rem] overflow-hidden shadow-[0_4px_15px_rgba(0,0,0,0.02)] border border-slate-100 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1.5">
+                            <article
+                                key={index}
+                                /* Set consistent widths that mimic your original grid columns */
+                                className="group flex flex-col bg-white rounded-[1.5rem] overflow-hidden shadow-[0_4px_15px_rgba(0,0,0,0.02)] border border-slate-100 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 
+            w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.33%-1.5rem)] xl:w-[calc(25%-1.5rem)]"
+                            >
 
                                 {/* REDUCED LOGO PEDESTAL */}
                                 <div className="relative h-40 flex items-center justify-center bg-white border-b border-slate-50 shrink-0">
-
-                                    {/* Pedestal Shadow Effect - Scaled down */}
+                                    {/* Pedestal Shadow Effect */}
                                     <div className="absolute bottom-6 w-20 h-3 bg-slate-200/20 blur-lg rounded-full"></div>
 
-                                    {/* Logo Container - Smaller size */}
+                                    {/* Logo Container */}
                                     <div className="relative z-10 w-58 h-38 flex items-center justify-center p-4 transition-all duration-500 group-hover:scale-105">
                                         <img
                                             src={item.logo}
@@ -98,7 +127,7 @@ const BusinessesPage = () => {
                                         />
                                     </div>
 
-                                    {/* Status Indicator - More subtle */}
+                                    {/* Status Indicator */}
                                     <div className="absolute top-4 right-4 flex items-center gap-1.5">
                                         <span className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse"></span>
                                         <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Live</span>

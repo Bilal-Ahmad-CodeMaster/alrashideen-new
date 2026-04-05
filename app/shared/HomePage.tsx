@@ -85,7 +85,7 @@ export const HomePage = () => {
       <HomeHero banners={banners} />
       {/* ================= CORE EXPERTISE ================= */}
       <section className="py-24 bg-grid-pattern">
-        <div className="container-wrap px-6 lg:px-8">
+        <div className="container-wrap px-6 lg:px-14">
           <div className="flex flex-col lg:flex-row justify-between gap-8 items-end mb-14">
             <div>
               <p className="text-[#ffd700] text-sm font-black uppercase tracking-[0.3em] mb-3">
@@ -147,20 +147,21 @@ export const HomePage = () => {
         </div>
       </section>
       {/* ================= ADVANTAGE SECTION ================= */}
-      <section className="py-24 bg-(--ink) text-white overflow-hidden">
-        <div className="container-wrap px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-24 px-10 bg-(--ink) text-white overflow-hidden">
+        <div className="container-wrap px-6 lg:px-14 grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="text-[var(--primary-container)] text-sm font-black uppercase tracking-[0.3em] mb-4">Why Choose Us</p>
             <h2 className="text-4xl md:text-5xl font-black uppercase leading-none">The Al Rashideen Advantage</h2>
-            <p className="mt-8 text-white/75 text-lg leading-8">We combine workshop capability, field experience and practical repair workflow to support crane owners, contractors and industrial clients across the UAE.</p>
+            <p className="mt-8 text-white/75 text-lg leading-8">Comprehensive crane repair services across the UAE. From fault detection and boom repair to dismantling, inspection, and full crane restoration, we combine workshop expertise with on-site experience to keep your operations running smoothly.
+            </p>
             <div className="grid sm:grid-cols-2 gap-8 mt-10">
               <div className="flex gap-4">
                 <span className="material-symbols-outlined text-[var(--primary-container)] text-4xl">verified</span>
-                <div><h3 className="font-black uppercase text-sm">Quality Focused</h3><p className="text-white/60 text-sm mt-2">Clear inspection, repair planning and workshop execution.</p></div>
+                <div><h3 className="font-black uppercase text-sm">Precision & Reliability</h3><p className="text-white/60 text-sm mt-2">Detailed inspections, accurate reporting, and structured repair execution for tower cranes, mobile cranes, and heavy lifting equipment—ensuring safe, reliable performance every time.</p></div>
               </div>
               <div className="flex gap-4">
                 <span className="material-symbols-outlined text-[var(--primary-container)] text-4xl">speed</span>
-                <div><h3 className="font-black uppercase text-sm">Fast Communication</h3><p className="text-white/60 text-sm mt-2">WhatsApp-friendly workflow for quicker technical review.</p></div>
+                <div><h3 className="font-black uppercase text-sm">Fast Communication & Support</h3><p className="text-white/60 text-sm mt-2">Quick updates, WhatsApp coordination, and direct technical guidance for urgent crane repairs, boom replacements, dismantling, and maintenance—saving time and minimizing downtime.</p></div>
               </div>
             </div>
             <Link href="/about" className="inline-block mt-10 px-8 py-4 bg-[var(--primary-container)] text-[var(--on-primary-container)] font-black text-sm uppercase tracking-[0.2em]">About Company</Link>
@@ -177,7 +178,7 @@ export const HomePage = () => {
 
       {/* ================= RECENT PROJECTS (BENTO GRID) ================= */}
       <section className="py-24 bg-white">
-        <div className="container-wrap px-6 lg:px-8">
+        <div className="container-wrap px-6 lg:px-14">
           <div className="text-center mb-14">
             <p className="text-[var(--primary)] text-sm font-black uppercase tracking-[0.38em] mb-4">Showcase</p>
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight">Recent Projects</h2>
@@ -206,7 +207,7 @@ export const HomePage = () => {
 
       {/* ================= ENGINEERING PROCESS ================= */}
       <section className="py-24 bg-surface">
-        <div className="container-wrap px-6 lg:px-8">
+        <div className="container-wrap px-6 lg:px-14">
           <div className="flex flex-col md:flex-row items-center justify-between mb-20">
             <h3 className="text-4xl font-black text-ink uppercase tracking-tight mb-4 md:mb-0">OUR ENGINEERING PROCESS</h3>
             <div className="flex items-center gap-4 text-[var(--primary)] font-black uppercase tracking-[0.22em] text-sm">
@@ -263,7 +264,7 @@ export const HomePage = () => {
       </section>
       {/* ================= CTA ================= */}
       <section className="py-24 bg-surface">
-        <div className="container-wrap px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+        <div className="container-wrap px-6 lg:px-18 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <p className="text-[var(--primary)] text-sm font-black uppercase tracking-[0.3em] mb-3">Ready to Talk</p>
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight">Need Help With Your Crane Repair Job?</h2>

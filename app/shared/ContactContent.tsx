@@ -64,32 +64,48 @@ export const ContactContent = () => {
     <>
       <main className="bg-white">
         {/* --- PROFESSIONAL HERO SECTION --- */}
-        <section className="relative bg-slate-900 py-24 lg:py-32 overflow-hidden">
-          <div className="absolute inset-0 opacity-25">
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900 z-10" />
-            <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80')] bg-cover bg-center" />
+        <section className="relative min-h-[50vh] lg:h-[623px] flex items-center overflow-hidden bg-[#181a30]">
+          {/* Background Layer with Consistent Image & Gradients */}
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 bg-[#111936]/70 z-10" />
+            <div
+              className="w-full h-full bg-[url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-30"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#111936]/60 via-[#111936]/30 to-transparent z-10" />
           </div>
 
-          <div className="container-wrap relative z-20 px-6 lg:px-8 text-center lg:text-left">
-            <div className="max-w-3xl">
-              <span className="text-[var(--primary-container)] font-black uppercase tracking-[0.4em] text-xs mb-4 block">
-                Connect with us
-              </span>
-              <h1 className="text-4xl md:text-6xl font-black text-white uppercase leading-tight tracking-tight">
-                Get Your Project <br />
-                <span className="text-[var(--primary-container)]">Moving Today</span>
-              </h1>
-              <p className="mt-6 text-lg text-slate-300 max-w-xl leading-relaxed">
-                Professional heavy equipment rental and industrial engineering solutions across the UAE.
-                Our experts are ready to assist with your specific machinery needs.
-              </p>
+          <div className="relative z-20 w-full">
+            <div className="max-w-[1680px] mx-auto px-6 md:px-12 xl:px-16 2xl:px-24">
+              <div className="max-w-[1100px]">
+
+                {/* 1. Tagline Badge - Synced with Home/Business Style */}
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-[#ffd700]/25 bg-[#ffd700]/10 rounded-sm mb-8">
+                  <span className="w-2 h-2 rounded-full bg-[#ffd700] animate-pulse"></span>
+                  <span className="text-[#ffd700] text-[10px] md:text-sm font-black uppercase tracking-[0.25em]">
+                    Connect with us
+                  </span>
+                </div>
+
+                {/* 2. Main Heading - Exact Scaling & Italic Style */}
+                <h1 className="text-[44px] leading-[0.92] sm:text-[78px] md:text-[96px] xl:text-[112px] font-black text-white uppercase tracking-[-0.05em] italic">
+                  Get Your Project<br />
+                  <span className="text-[#ffd700]">Moving Today</span>
+                </h1>
+
+                {/* 3. Description - Precise Font Size, Gold Color, and Left Anchor */}
+                <p className="mt-8 max-w-[750px] text-[18px] leading-[1.3] md:text-[24px] text-[#ffd700] border-l-[4px] border-[#ffd700] pl-5">
+                  Professional heavy equipment rental and industrial engineering solutions across the UAE.
+                  Our experts are ready to assist with your specific machinery needs.
+                </p>
+
+              </div>
             </div>
           </div>
         </section>
 
         {/* --- CONTACT & ENQUIRY SECTION --- */}
         <section className="py-24 bg-white" id="enquiry">
-          <div className="container-wrap px-6 lg:px-8 grid lg:grid-cols-[2fr_3fr] gap-10">
+          <div className="container-wrap px-6 lg:px-14 grid lg:grid-cols-[2fr_3fr] gap-10">
 
             {/* Contact Details Card */}
             <div className="bg-slate-50 border border-slate-100 rounded-2xl p-8 shadow-sm">
@@ -140,9 +156,9 @@ export const ContactContent = () => {
                 <input name="email" value={formData.email} onChange={handleChange} required className="w-full rounded-xl border-slate-200 bg-slate-50 p-4 focus:ring-2 focus:ring-primary outline-none transition-all" type="email" placeholder="Email Address" />
                 <input name="companyName" value={formData.companyName} onChange={handleChange} className="w-full rounded-xl border-slate-200 bg-slate-50 p-4 focus:ring-2 focus:ring-primary outline-none transition-all" type="text" placeholder="Company Name" />
               </div>
-              {(getFormType() !== "job" )&&(
+              {(getFormType() !== "job") && (
                 <input name="equipmentType" value={formData.equipmentType} onChange={handleChange} className="w-full rounded-xl border-slate-200 bg-slate-50 p-4 focus:ring-2 focus:ring-primary outline-none transition-all" type="text" placeholder={getFormType() === "job" ? "Position Applied For" : "Machine / Service Required"} />)
-              }  
+              }
               <textarea name="message" value={formData.message} onChange={handleChange} required className="w-full rounded-xl border-slate-200 bg-slate-50 min-h-[180px] p-4 focus:ring-2 focus:ring-primary outline-none transition-all resize-none" placeholder={getFormType() === "job" ? "Describe your experience and skills" : "Write your requirement, machine model, issue details or job scope"}></textarea>
 
               <div className="flex flex-wrap gap-4 pt-2">

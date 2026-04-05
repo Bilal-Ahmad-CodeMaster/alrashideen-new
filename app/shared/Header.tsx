@@ -36,10 +36,10 @@ export const Header = () => {
   return (
     <>
       <nav className="fixed w-full top-0 z-[100] border-b border-slate-100 bg-white/90  shadow-sm">
-        <div className="container-wrap px-4 md:px-6 lg:px-8 py-3 md:py-4 flex items-center justify-between gap-4">
+        <div className="container-wrap px-4 md:px-6 lg:px-14 py-3 md:py-4 flex items-center justify-between gap-4">
 
           {/* Logo Section */}
-          <Link href="/" className="flex items-start text-lg md:text-2xl font-black tracking-tighter uppercase text-slate-900 z-[110]">
+          <Link href="/" className="flex items-start text-lg md:text-3xl font-black  uppercase text-slate-900 z-[110]">
             <img src="https://www.alrashideenengg.com/img/logo.alrashideen.png" alt="Logo" className="w-12 h-12 md:w-20 md:h-20 mr-2 -mt-1 md:-mt-4" />
             <div className="flex flex-col leading-tight">
               AL RASHIDEEN
@@ -56,8 +56,8 @@ export const Header = () => {
                   key={link.name}
                   href={link.href}
                   className={`text-sm tracking-tight transition-all duration-200 ${isActive
-                      ? "text-yellow-600 border-b-2 border-yellow-500 pb-1 font-bold"
-                      : "text-slate-600 hover:text-slate-900 font-medium"
+                    ? "text-yellow-600 border-b-2 border-yellow-500 pb-1 font-bold"
+                    : "text-slate-600 hover:text-slate-900 font-medium"
                     }`}
                 >
                   {link.name}
@@ -104,9 +104,9 @@ export const Header = () => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`text-lg py-3 px-4 rounded-lg transition-all ${isActive
-                        ? "bg-yellow-50 text-yellow-600 font-bold border-r-4 border-yellow-500"
-                        : "text-slate-800 font-semibold hover:bg-slate-50"
+                    className={`text-xl py-3 px-4 rounded-lg transition-all ${isActive
+                      ? "bg-yellow-50 text-yellow-600 font-bold border-r-4 border-yellow-500"
+                      : "text-slate-800 font-semibold hover:bg-slate-50"
                       }`}
                   >
                     {link.name}
@@ -123,7 +123,7 @@ export const Header = () => {
         </div>
       </nav>
 
-     
+
     </>
   );
 }

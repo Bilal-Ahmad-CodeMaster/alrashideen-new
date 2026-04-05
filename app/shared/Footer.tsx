@@ -23,7 +23,7 @@ export const Footer = () => {
 
   return (
     <footer className="bg-slate-950 text-white pt-16 pb-10">
-      <div className="container-wrap px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
+      <div className="container-wrap px-6 lg:px-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
 
         {/* Brand Section */}
         <div className="space-y-8">
@@ -88,7 +88,7 @@ export const Footer = () => {
               </a>
               <a href="mailto:ahmadali@alrashideenengg.com" className={`flex items-center gap-2 ${hoverClass}`}>
                 <span className="material-symbols-outlined text-[18px]">mail</span>
-                ahmadali@alrashideenengg.com
+                info@alrashideenengg.com
               </a>
               <a
                 href="https://wa.me/971526366779"
@@ -105,7 +105,7 @@ export const Footer = () => {
       </div>
 
       {/* Bottom Copyright Bar */}
-      <div className="container-wrap px-6 lg:px-8 mt-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="container-wrap px-6 lg:px-14 mt-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-slate-500 text-xs">
           © {new Date().getFullYear()} AL RASHIDEEN Engineering Turning. All rights reserved.
         </p>

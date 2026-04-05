@@ -62,7 +62,7 @@ export default function ServiceDetailPage() {
       <section className="relative overflow-hidden bg-[var(--ink)]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,215,0,.14),transparent_28%),linear-gradient(90deg,rgba(24,26,48,.98),rgba(24,26,48,.92),rgba(24,26,48,.86))]"></div>
         <div className="absolute inset-0 opacity-15 bg-[linear-gradient(90deg,transparent_0,transparent_49.5%,rgba(255,255,255,.1)_49.5%,rgba(255,255,255,.1)_50.5%,transparent_50.5%,transparent_100%)]"></div>
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-24 lg:py-28 grid lg:grid-cols-[1.1fr_.9fr] gap-10 items-center">
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-14 py-12 md:py-24 lg:py-28 grid lg:grid-cols-[1.1fr_.9fr] gap-10 items-center">
           <div>
             <div className="inline-flex items-center gap-3 px-4 py-2 border border-[var(--primary-container)]/25 rounded-lg bg-white/5 mb-6 md:mb-8">
               <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-[var(--primary-container)]"></span>
@@ -105,7 +105,7 @@ export default function ServiceDetailPage() {
 
       {/* --- SECTION 2: MAIN PAGE CONTENT --- */}
       <section className="py-12 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-[1.15fr_.85fr] gap-8 lg:gap-10 items-start">
+        <div className="max-w-7xl mx-auto px-6 lg:px-14 grid lg:grid-cols-[1.15fr_.85fr] gap-8 lg:gap-10 items-start">
           <div className="bg-white rounded-2xl md:rounded-[2rem] border border-slate-200 shadow-soft overflow-hidden">
             <div className="bg-[var(--ink)] px-6 md:px-10 py-6 md:py-8">
               <p className="text-[var(--primary-container)] text-[10px] md:text-sm font-black uppercase tracking-[0.28em] mb-2 md:mb-3">Service Overview</p>
@@ -176,7 +176,7 @@ export default function ServiceDetailPage() {
 
       {/* --- SECTION 3: CTA SECTION --- */}
       <section className="py-12 md:py-20 bg-[#f6f8ff] grid-dots">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 lg:px-14">
           <div className="rounded-2xl md:rounded-[2rem] bg-[var(--ink)] px-6 md:px-12 py-10 md:py-14 flex flex-col lg:flex-row gap-8 lg:items-center lg:justify-between">
             <div className="max-w-3xl">
               <p className="text-[var(--primary-container)] text-[10px] md:text-sm font-black uppercase tracking-[0.28em] mb-3 md:mb-4">Next Step</p>
