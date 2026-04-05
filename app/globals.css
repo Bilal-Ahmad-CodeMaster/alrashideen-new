@@ -14,9 +14,9 @@
   --ink: #181a30;
   --muted: #4d4732;
   --outline: #d0c6ab;
-  
+
   --radius: 8px;
-  --shadow-soft: 0 10px 40px rgba(24, 26, 48, 0.10);
+  --shadow-soft: 0 10px 40px rgba(24, 26, 48, 0.1);
   --shadow-card: 0 14px 50px rgba(24, 26, 48, 0.12);
 }
 
@@ -34,32 +34,54 @@
 }
 
 /* ================= BASE ================= */
-html { 
-  scroll-behavior: smooth; 
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: var(--background);
   color: var(--ink);
   margin: 0;
 }
 
 /* ================= UTILITIES ================= */
-.bg-primary { background-color: var(--primary); }
-.bg-primary-container { background-color: var(--primary-container); }
-.bg-surface-2 { background-color: var(--surface-2); }
-.bg-surface-3 { background-color: var(--surface-3); }
+.bg-primary {
+  background-color: var(--primary);
+}
+.bg-primary-container {
+  background-color: var(--primary-container);
+}
+.bg-surface-2 {
+  background-color: var(--surface-2);
+}
+.bg-surface-3 {
+  background-color: var(--surface-3);
+}
 
-.text-primary { color: var(--primary); }
-.text-muted { color: var(--muted); }
-.text-on-container { color: var(--on-primary-container); }
+.text-primary {
+  color: var(--primary);
+}
+.text-muted {
+  color: var(--muted);
+}
+.text-on-container {
+  color: var(--on-primary-container);
+}
 
-.border-outline { border-color: var(--outline); }
-.rounded-theme { border-radius: var(--radius); }
+.border-outline {
+  border-color: var(--outline);
+}
+.rounded-theme {
+  border-radius: var(--radius);
+}
 
-.shadow-soft { box-shadow: var(--shadow-soft); }
-.shadow-card { box-shadow: var(--shadow-card); }
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
 
 /* ================= HOVERS ================= */
 .hover-bg-primary:hover {
@@ -68,29 +90,40 @@ body {
 }
 
 /* ================= PATTERNS & EFFECTS ================= */
-.bg-grid-pattern { 
-  background-image: radial-gradient(var(--outline) 1px, transparent 1px); 
-  background-size: 24px 24px; 
+.bg-grid-pattern {
+  background-image: radial-gradient(var(--outline) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 .hero-gradient {
-  background: linear-gradient(rgba(24, 26, 48, 0.75), rgba(24, 26, 48, 0.85)),
-              url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2000");
+  background:
+    linear-gradient(rgba(24, 26, 48, 0.75), rgba(24, 26, 48, 0.85)),
+    url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2000");
   background-size: cover;
   background-position: center;
 }
 
 /* ================= ICONS ================= */
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 500,
+    "GRAD" 0,
+    "opsz" 24;
   display: inline-block;
   vertical-align: middle;
 }
 
 /* ================= ANIMATIONS ================= */
 @keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in-up {
@@ -98,6 +131,38 @@ body {
 }
 
 /* Smooth transitions for all interactive elements */
-a, button, input, .transition {
+a,
+button,
+input,
+.transition {
   transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================= SELECTION ================= */
+::selection {
+  background-color: var(--primary-container);
+  color: var(--on-primary-container);
+}
+
+/* For Firefox support */
+::-moz-selection {
+  background-color: var(--primary-container);
+  color: var(--on-primary-container);
+} /* ================= GLOBAL SELECTION ================= */
+@layer base {
+  ::selection {
+    background-color: #ffd700 !important; /* var(--primary-container) */
+    color: #221b00 !important; /* var(--on-primary-container) */
+  }
+
+  ::-moz-selection {
+    background-color: #ffd700 !important;
+    color: #221b00 !important;
+  }
+}
+
+/* Fallback for non-layer environments */
+::selection {
+  background-color: var(--primary-container) !important;
+  color: var(--on-primary-container) !important;
 }
