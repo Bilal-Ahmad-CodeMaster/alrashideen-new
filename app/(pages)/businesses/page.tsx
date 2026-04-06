@@ -63,34 +63,33 @@ const BusinessesPage = () => {
     return (
         <main className="min-h-screen bg-white">
 
-            <section className="relative min-h-[60vh] lg:h-[623px] flex items-center overflow-hidden bg-[#181a30]">
-                {/* Background Layer with Home Page Gradients */}
+            <section className="relative min-h-[35vh] lg:h-[320px] flex items-center overflow-hidden bg-[#181a30] py-12 lg:py-0">
+                {/* Background Layer */}
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-[#111936]/60" />
                     <div className="absolute inset-0 bg-gradient-to-r from-[#111936]/40 via-[#111936]/20 to-transparent" />
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,215,0,.12),transparent_50%)]"></div>
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,215,0,.08),transparent_50%)]"></div>
                 </div>
 
                 <div className="relative z-10 w-full">
                     <div className="max-w-[1680px] mx-auto px-6 md:px-12 xl:px-16 2xl:px-24">
                         <div className="max-w-[1100px]">
 
-                            {/* 1. Tagline - Matches Home Page Styles */}
-                            <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-[#ffd700]/25 bg-[#ffd700]/10 rounded-sm mb-8">
-                                <span className="w-2 h-2 rounded-full bg-[#ffd700] animate-pulse"></span>
-                                <span className="text-[#ffd700] text-[10px] md:text-sm font-black uppercase tracking-[0.25em]">
+                            {/* 1. Tagline Badge - Compact */}
+                            <div className="inline-flex items-center gap-2 px-2.5 py-1 border border-[#ffd700]/25 bg-[#ffd700]/10 rounded-sm mb-4">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#ffd700] animate-pulse"></span>
+                                <span className="text-[#ffd700] text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
                                     Group Presence
                                 </span>
                             </div>
 
-                            {/* 2. Main Heading - Matches Home Page Font Sizes and Italic Style */}
-                            <h1 className="text-[44px] leading-[0.92] sm:text-[78px] md:text-[96px] xl:text-[112px] font-black text-white uppercase tracking-[-0.05em] italic">
-                                Our Businesses<br />
-                                & <span className="text-[#ffd700]">Locations</span>
+                            {/* 2. Main Heading - Scaled & Professional */}
+                            <h1 className="text-[36px] leading-[0.95] sm:text-[54px] md:text-[64px] xl:text-[72px] font-black text-white uppercase tracking-[-0.04em] italic">
+                                Our Businesses <span className="text-[#ffd700]">& Locations</span>
                             </h1>
 
-                            {/* 3. Description - Matches Home Page Font Size, Color, and Left Border */}
-                            <p className="mt-8 max-w-[750px] text-[18px] leading-[1.3] md:text-[24px] text-[#ffd700] border-l-[4px] border-[#ffd700] pl-5">
+                            {/* 3. Description - Compacted Line Height */}
+                            <p className="mt-4 max-w-[750px] text-[14px] leading-[1.4] md:text-[18px] text-[#ffd700]/90 border-l-[3px] border-[#ffd700] pl-4 font-medium">
                                 Al Rashideen Engineering Turning is part of the Al Rashideen Engineering Group in Sharjah, UAE.
                                 Our group spans lubricants, engineering, spare parts, machinery maintenance, and manufacturing,
                                 delivering reliable, industry-focused solutions.

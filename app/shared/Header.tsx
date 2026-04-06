@@ -36,7 +36,7 @@ export const Header = () => {
   return (
     <>
       <nav className="fixed w-full top-0 z-[100] border-b border-slate-100 bg-white/90  shadow-sm">
-        <div className="container-wrap px-4 md:px-6 lg:px-[93.8px] py-3 md:py-4 flex items-center justify-between gap-4">
+        <div className="container-wrap px-4 md:px-6 lg:px-[111.8px] py-3 md:py-4 flex items-center justify-between gap-4">
 
           {/* Logo Section */}
           <Link href="/" className="flex items-start text-xl md:text-2xl font-black tracking-tighter uppercase text-slate-900 z-[110]">
@@ -70,7 +70,7 @@ export const Header = () => {
 
           {/* Action Buttons & Hamburger */}
           <div className="flex items-center gap-2 md:gap-3">
-            <div className="hidden relative right-7 sm:flex items-center gap-2 md:gap-3">
+            <div className="hidden relative right-0 sm:flex items-center gap-2 md:gap-3">
               <Link href="/contact#inquiry" className="px-4 py-2 rounded-lg bg-[#ffd700] text-[#221b00] text-sm font-bold hover:bg-[#e6c200] transition-colors">Enquiry</Link>
               <Link href="/contact" className="px-4 py-2 rounded-lg border border-[#d0c6ab] text-sm font-bold text-[#181a30]">Contact</Link>
             </div>

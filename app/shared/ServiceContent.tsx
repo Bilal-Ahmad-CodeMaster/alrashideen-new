@@ -42,43 +42,43 @@ export const ServiceContent = () => {
     <>
       <Toaster position="top-right" />
 
-      <section className="relative min-h-[60vh] lg:h-[850px] flex items-center overflow-hidden bg-[#181a30]">
+      <section className="relative min-h-[45vh] lg:h-[450px] flex items-center overflow-hidden bg-[#181a30] py-16 lg:py-0">
         {/* Background Layer with Consistent Gradients */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[#111936]/60" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#111936]/40 via-[#111936]/20 to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,215,0,.12),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,215,0,.08),transparent_50%)]"></div>
         </div>
 
         <div className="relative z-10 w-full">
           <div className="max-w-[1680px] mx-auto px-6 md:px-12 xl:px-16 2xl:px-24">
             <div className="max-w-[1100px]">
 
-              {/* 1. Tagline Badge - Synced with Home Style */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-[#ffd700]/25 bg-[#ffd700]/10 rounded-sm mb-8">
-                <span className="w-2 h-2 rounded-full bg-[#ffd700] animate-pulse"></span>
-                <span className="text-[#ffd700] text-[10px] md:text-sm font-black uppercase tracking-[0.25em]">
+              {/* 1. Tagline Badge - Compact */}
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 border border-[#ffd700]/25 bg-[#ffd700]/10 rounded-sm mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ffd700] animate-pulse"></span>
+                <span className="text-[#ffd700] text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
                   Our Capabilities
                 </span>
               </div>
 
-              {/* 2. Main Heading - Exact Scaling & Italic Style */}
-              <h1 className="text-[44px] leading-[0.92] sm:text-[78px] md:text-[96px] xl:text-[112px] font-black text-white uppercase tracking-[-0.05em] italic">
+              {/* 2. Main Heading - Scaled for tighter height */}
+              <h1 className="text-[34px] leading-[0.95] sm:text-[50px] md:text-[60px] xl:text-[68px] font-black text-white uppercase tracking-[-0.04em] italic">
                 Engineering Services<br />
                 <span className="text-[#ffd700]">For Crane Systems</span>
               </h1>
 
-              {/* 3. Description - Precise Font Size, Gold Color, and Left Anchor */}
-              <p className="mt-8 max-w-[750px] text-[18px] leading-[1.3] md:text-[24px] text-[#ffd700] border-l-[4px] border-[#ffd700] pl-5">
+              {/* 3. Description - Precise Font Size & Original Text */}
+              <p className="mt-4 max-w-[750px] text-[14px] leading-[1.4] md:text-[18px] text-[#ffd700]/90 border-l-[3px] border-[#ffd700] pl-4 font-medium">
                 Advanced crane boom repair, structural reinforcement, and hydraulic restoration
                 for mobile and crawler crane systems. Precision engineering for heavy-duty performance.
               </p>
 
-              {/* 4. CTA Buttons - Synced with Home Page Styles */}
-              <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              {/* 4. CTA Buttons - Scaled for Compact Layout */}
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/contact#enquiry"
-                  className="text-center px-8 py-4 bg-[#ffd700] text-[#221b00] font-black text-xs md:text-sm uppercase tracking-[0.2em] hover:scale-105 transition-transform"
+                  className="text-center px-6 py-3 bg-[#ffd700] text-[#221b00] font-black text-[10px] md:text-xs uppercase tracking-[0.2em] hover:scale-105 transition-transform"
                 >
                   Request Enquiry
                 </Link>
@@ -86,7 +86,7 @@ export const ServiceContent = () => {
                   href="https://wa.me/971526366779"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-center px-8 py-4 border border-white/30 text-white font-black text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-white/10 transition-colors"
+                  className="text-center px-6 py-3 border border-white/30 text-white font-black text-[10px] md:text-xs uppercase tracking-[0.2em] hover:bg-white/10 transition-colors"
                 >
                   Send Photos On WhatsApp
                 </a>

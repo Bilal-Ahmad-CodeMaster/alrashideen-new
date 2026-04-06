@@ -62,12 +62,12 @@ const Projects = () => {
         </div>
       )}
 
-      <section className="relative min-h-[60vh] lg:h-[623px] flex items-center overflow-hidden bg-[#181a30]">
+      <section className="relative min-h-[35vh] lg:h-[320px] flex items-center overflow-hidden bg-[#181a30] py-12 lg:py-0">
         {/* Background Layer with Consistent Gradients */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[#111936]/60" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#111936]/40 via-[#111936]/20 to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,215,0,.12),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,215,0,.08),transparent_50%)]"></div>
           {/* Grid Pattern Effect */}
           <div className="absolute inset-0 opacity-10 bg-[linear-gradient(90deg,transparent_0,transparent_49.5%,rgba(255,255,255,.1)_49.5%,rgba(255,255,255,.1)_50.5%,transparent_50.5%,transparent_100%)]"></div>
         </div>
@@ -76,22 +76,21 @@ const Projects = () => {
           <div className="max-w-[1680px] mx-auto px-6 md:px-12 xl:px-16 2xl:px-24">
             <div className="max-w-[1100px]">
 
-              {/* 1. Tagline Badge - Synced with Home/Business Style */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-[#ffd700]/25 bg-[#ffd700]/10 rounded-sm mb-8">
-                <span className="w-2 h-2 rounded-full bg-[#ffd700] animate-pulse"></span>
-                <span className="text-[#ffd700] text-[10px] md:text-sm font-black uppercase tracking-[0.25em]">
+              {/* 1. Tagline Badge - Scaled Down */}
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 border border-[#ffd700]/25 bg-[#ffd700]/10 rounded-sm mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ffd700] animate-pulse"></span>
+                <span className="text-[#ffd700] text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
                   Project Showcase
                 </span>
               </div>
 
-              {/* 2. Main Heading - Exact Scaling & Italic Style */}
-              <h1 className="text-[44px] leading-[0.92] sm:text-[78px] md:text-[96px] xl:text-[112px] font-black text-white uppercase tracking-[-0.05em] italic">
-                Our Projects<br />
-                <span className="text-[#ffd700]">Portfolio</span>
+              {/* 2. Main Heading - Tighter Leading & Smaller Mobile Scaling */}
+              <h1 className="text-[36px] leading-[0.95] sm:text-[54px] md:text-[64px] xl:text-[72px] font-black text-white uppercase tracking-[-0.04em] italic">
+                Our Projects <span className="text-[#ffd700]">Portfolio</span>
               </h1>
 
-              {/* 3. Description - Precise Font Size, Gold Color, and Left Anchor */}
-              <p className="mt-8 max-w-[750px] text-[18px] leading-[1.3] md:text-[24px] text-[#ffd700] border-l-[4px] border-[#ffd700] pl-5">
+              {/* 3. Description - Thinner border and reduced font size for a "Professional" feel */}
+              <p className="mt-4 max-w-[650px] text-[14px] leading-[1.4] md:text-[18px] text-[#ffd700]/90 border-l-[3px] border-[#ffd700] pl-4 font-medium">
                 Showcase of completed crane repairs, structural work, and
                 engineering projects across the construction and heavy machinery
                 sectors. Delivering precision results since 2002.
