@@ -15,6 +15,9 @@ export default function ServiceDetailPage() {
   const [relatedServices, setRelatedServices] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // New state for Lightbox/Preview
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+
   useEffect(() => {
     const fetchFullData = async () => {
       try {
@@ -40,11 +43,13 @@ export default function ServiceDetailPage() {
     if (params.slug) fetchFullData();
   }, [params.slug, router]);
 
-  const nextImage = () => {
+  const nextImage = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
     setCurrentImageIndex((prev) => (prev === currentService.galleryImages.length - 1 ? 0 : prev + 1));
   };
 
-  const prevImage = () => {
+  const prevImage = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
     setCurrentImageIndex((prev) => (prev === 0 ? currentService.galleryImages.length - 1 : prev - 1));
   };
 
@@ -58,6 +63,51 @@ export default function ServiceDetailPage() {
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
+
+      {/* --- FULLSCREEN IMAGE PREVIEW (LIGHTBOX) --- */}
+      {isPreviewOpen && currentService.galleryImages?.[currentImageIndex] && (
+        <div
+          className="fixed inset-0 z-[2000] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-10"
+          onClick={() => setIsPreviewOpen(false)}
+        >
+          {/* Close Button */}
+          <button className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-[2100]">
+            <span className="material-symbols-outlined text-4xl">close</span>
+          </button>
+
+          {/* Navigation - Prev */}
+          <button
+            onClick={prevImage}
+            className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 flex items-center justify-center transition-all z-[2100]"
+          >
+            <span className="material-symbols-outlined text-3xl md:text-4xl">chevron_left</span>
+          </button>
+
+          {/* Main Preview Image */}
+          <div className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={currentService.galleryImages[currentImageIndex].image}
+              className="max-w-full max-h-[80vh] object-contain shadow-[0_0_50px_rgba(0,0,0,0.5)] rounded-lg"
+              alt="Full Preview"
+            />
+            <div className="mt-6 text-center max-w-2xl">
+              <p className="text-[var(--primary-container)] text-xs font-black uppercase tracking-widest mb-2">Technical View {currentImageIndex + 1} / {currentService.galleryImages.length}</p>
+              <p className="text-white/80 text-sm md:text-lg italic font-medium">
+                {currentService.galleryImages[currentImageIndex].description}
+              </p>
+            </div>
+          </div>
+
+          {/* Navigation - Next */}
+          <button
+            onClick={nextImage}
+            className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 flex items-center justify-center transition-all z-[2100]"
+          >
+            <span className="material-symbols-outlined text-3xl md:text-4xl">chevron_right</span>
+          </button>
+        </div>
+      )}
+
       {/* --- SECTION 1: HERO SECTION --- */}
       <section className="relative overflow-hidden bg-[var(--ink)]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,215,0,.14),transparent_28%),linear-gradient(90deg,rgba(24,26,48,.98),rgba(24,26,48,.92),rgba(24,26,48,.86))]"></div>
@@ -107,9 +157,8 @@ export default function ServiceDetailPage() {
       <section className="py-12 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-14 grid lg:grid-cols-[1.05fr_.95fr] gap-8 lg:gap-10 items-start">
 
-
           <div className="bg-[var(--ink)] rounded-2xl md:rounded-[2rem] overflow-hidden shadow-soft">
-            <div className="relative aspect-video w-full bg-black/20 group">
+            <div className="relative aspect-video w-full bg-black/20 group cursor-zoom-in" onClick={() => setIsPreviewOpen(true)}>
               {currentService.galleryImages?.[currentImageIndex] && (
                 <img
                   src={currentService.galleryImages[currentImageIndex].image}
@@ -117,13 +166,19 @@ export default function ServiceDetailPage() {
                   alt="Gallery Swiper"
                 />
               )}
+
+              {/* Overlay Label for Click */}
+              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-md p-2 rounded-full text-white">
+                <span className="material-symbols-outlined text-sm">fullscreen</span>
+              </div>
+
               <div className="absolute inset-x-0 bottom-0 p-3 md:p-4 bg-gradient-to-t from-black/80 to-transparent">
                 <p className="text-white text-[10px] md:text-xs italic">{currentService.galleryImages?.[currentImageIndex]?.description}</p>
               </div>
-              <button onClick={prevImage} className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/10 text-white backdrop-blur-md flex items-center justify-center">
+              <button onClick={prevImage} className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/10 text-white backdrop-blur-md flex items-center justify-center hover:bg-[var(--primary-container)] hover:text-[var(--ink)] transition-colors">
                 <span className="material-symbols-outlined text-sm md:text-base">chevron_left</span>
               </button>
-              <button onClick={nextImage} className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/10 text-white backdrop-blur-md flex items-center justify-center">
+              <button onClick={nextImage} className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/10 text-white backdrop-blur-md flex items-center justify-center hover:bg-[var(--primary-container)] hover:text-[var(--ink)] transition-colors">
                 <span className="material-symbols-outlined text-sm md:text-base">chevron_right</span>
               </button>
             </div>
@@ -161,20 +216,15 @@ export default function ServiceDetailPage() {
                 {currentService.practicalDescription}
               </p>
 
-              {/* Practical Steps Row */}
               <div className="mt-8 md:mt-10 grid sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-5">
                 {currentService.practicalSteps?.map((step: any, idx: number) => (
                   <div key={idx} className="rounded-xl md:rounded-2xl bg-slate-50 border border-slate-200 p-5 md:p-6 flex flex-col h-full">
                     <p className="text-[10px] font-black uppercase tracking-[0.24em] text-[var(--primary)]">
                       Step 0{idx + 1}
                     </p>
-
-                    {/* Fixed Heading: Added responsive text sizing and word breaking */}
                     <h3 className="mt-2 md:mt-3 text-base md:text-sm  font-black uppercase leading-tight text-slate-900 break-words hyphens-auto">
                       {step.practicalStepHeading}
                     </h3>
-
-                    {/* Adjusted Description: Smoothed out the font jump */}
                     <p className="mt-2 md:mt-3 text-slate-600 text-sm  leading-relaxed">
                       {step.practicalStepDescription}
                     </p>
@@ -186,7 +236,7 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* --- SECTION 3: CTA SECTION --- */}
+      {/* --- REST OF SECTIONS --- */}
       <section className="py-12 md:py-20 bg-[#f6f8ff] grid-dots">
         <div className="max-w-7xl mx-auto px-6 lg:px-14">
           <div className="rounded-2xl md:rounded-[2rem] bg-[var(--ink)] px-6 md:px-12 py-10 md:py-14 flex flex-col lg:flex-row gap-8 lg:items-center lg:justify-between">
@@ -209,7 +259,6 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* --- SECTION 4: RELATED SERVICES --- */}
       {relatedServices.length > 0 && (
         <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
           <h2 className="text-xl md:text-2xl font-bold text-center mb-8 md:mb-12 text-[var(--ink)]">
