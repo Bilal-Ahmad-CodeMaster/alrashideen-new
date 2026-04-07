@@ -67,7 +67,7 @@ export default function ServiceDetailPage() {
       {/* --- FULLSCREEN IMAGE PREVIEW (LIGHTBOX) --- */}
       {isPreviewOpen && currentService.galleryImages?.[currentImageIndex] && (
         <div
-          className="fixed inset-0 z-[2000] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-10"
+          className="fixed inset-0 z-[2000] bg-black/55 backdrop-blur-sm flex items-center justify-center p-4 md:p-10"
           onClick={() => setIsPreviewOpen(false)}
         >
           {/* Close Button */}
@@ -139,8 +139,8 @@ export default function ServiceDetailPage() {
             <div className="absolute -top-3 md:-top-5 left-0 h-16 w-16 md:h-28 md:w-28 border-t-4 md:border-t-[10px] border-l-4 md:border-l-[10px] border-[var(--primary-container)]/25"></div>
             <div className="absolute -bottom-3 md:-bottom-5 right-0 h-20 w-20 md:h-32 md:w-32 border-b-4 md:border-b-[10px] border-r-4 md:border-r-[10px] border-[var(--primary-container)]/12"></div>
             <div className="relative rounded-2xl md:rounded-[2rem] overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(255,215,0,.24),transparent_30%),linear-gradient(135deg,#181a30,#22243a_58%,#181a30)] shadow-soft border border-white/10 min-h-[350px] md:min-h-[480px] flex items-end">
-             
-             
+
+
               {currentService.galleryImages?.[0] && (
                 <img src={currentService.galleryImages[0].image} className="absolute inset-0 w-full h-full object-cover" alt="Hero Featured" />
               )}
@@ -148,7 +148,7 @@ export default function ServiceDetailPage() {
               {currentService.galleryImages.description && <div className="p-6 md:p-10 lg:p-12 relative w-full bg-gradient-to-t from-[var(--ink)] to-transparent">
                 <p className="text-[var(--primary-container)] text-[10px] md:text-sm font-black uppercase tracking-[0.28em]">Technical Showcase</p>
                 <p className="mt-2 md:mt-4 text-slate-300 text-sm md:text-lg leading-6 md:leading-8 max-w-xl">
-                  {currentService.galleryImages?.[0]?.description }
+                  {currentService.galleryImages?.[0]?.description}
                 </p>
               </div>}
             </div>
