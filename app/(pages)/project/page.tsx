@@ -1,4 +1,5 @@
 import Projects from "@/app/shared/Projects";
+import ProjectsVideos from "@/app/shared/ProjectsVideos";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Explore Al Rashideen’s engineering projects showcasing precision shaft turning, custom component fabrication, CNC milling, industrial gear refurbishment, and advanced manufacturing solutions across UAE. Trusted experts with 25+ years of experience delivering high-performance industrial results.",
   keywords: [
-    
+
     "engineering projects UAE",
     "precision machining projects UAE",
     "industrial solutions UAE",
@@ -25,6 +26,7 @@ const Page = () => {
   return (
     <>
       <Projects />
+      <ProjectsVideos />
     </>
   );
 };
