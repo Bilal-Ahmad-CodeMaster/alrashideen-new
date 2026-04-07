@@ -184,16 +184,28 @@ export default function ServiceDetailPage() {
             </div>
 
             <div className="p-6 md:p-10 border-b border-white/10">
-              <p className="text-[var(--primary-container)] text-[10px] md:text-sm font-black uppercase tracking-[0.28em] mb-3 md:mb-4">Technical Specs</p>
-              <h3 className="text-2xl md:text-3xl font-black uppercase leading-tight text-white">Features & Highlights</h3>
+              <p className="text-[var(--primary-container)] text-[10px] md:text-sm font-black uppercase tracking-[0.28em] mb-4 md:mb-6">
+                Technical Specs
+              </p>
 
-              <div className="mt-4 flex flex-wrap gap-2">
+              {/* Updated Bullet Points to match Hero Badge Style */}
+              <div className="flex flex-wrap gap-3 md:gap-4">
                 {currentService.bulletPoints?.map((bp: string, i: number) => (
-                  <span key={i} className="text-[9px] md:text-[10px] text-white/60 bg-white/5 px-2 py-1 rounded border border-white/10 uppercase tracking-widest font-bold">
-                    {bp}
-                  </span>
+                  <div
+                    key={i}
+                    className="inline-flex items-center gap-2 px-3 py-1.5 border border-[var(--primary-container)]/25 rounded-lg bg-white/5"
+                  >
+                    <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[var(--primary-container)] shadow-[0_0_8px_var(--primary-container)]"></span>
+                    <span className="text-[var(--primary-container)] text-[9px] md:text-[11px] font-black uppercase tracking-[0.15em] md:tracking-[0.2em]">
+                      {bp}
+                    </span>
+                  </div>
                 ))}
               </div>
+
+              <h3 className="mt-8 text-2xl md:text-3xl font-black uppercase leading-tight text-white italic">
+                Features & <span className="text-[var(--primary-container)]">Highlights</span>
+              </h3>
             </div>
 
             <div className="p-6 md:p-10 space-y-4 md:space-y-5">
