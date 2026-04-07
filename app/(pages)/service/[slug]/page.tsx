@@ -162,7 +162,7 @@ export default function ServiceDetailPage() {
               </p>
 
               {/* Practical Steps Row */}
-              <div className="mt-8 md:mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+              <div className="mt-8 md:mt-10 grid sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-5">
                 {currentService.practicalSteps?.map((step: any, idx: number) => (
                   <div key={idx} className="rounded-xl md:rounded-2xl bg-slate-50 border border-slate-200 p-5 md:p-6 flex flex-col h-full">
                     <p className="text-[10px] font-black uppercase tracking-[0.24em] text-[var(--primary)]">
