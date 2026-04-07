@@ -158,7 +158,7 @@ export default function ServiceDetailPage() {
             </div>
             <div className="p-6 0">
               <p className="text-slate-700 text-sm md:text-lg leading-7 md:leading-9">
-                {currentService.description}
+                {currentService.practicalDescription}
               </p>
 
               {/* Practical Steps Row */}
