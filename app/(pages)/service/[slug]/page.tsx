@@ -105,29 +105,8 @@ export default function ServiceDetailPage() {
 
       {/* --- SECTION 2: MAIN PAGE CONTENT --- */}
       <section className="py-12 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-14 grid lg:grid-cols-[1.15fr_.85fr] gap-8 lg:gap-10 items-start">
-          <div className="bg-white rounded-2xl md:rounded-[2rem] border border-slate-200 shadow-soft overflow-hidden">
-            <div className="bg-[var(--ink)] px-6 md:px-10 py-6 md:py-8">
-              <p className="text-[var(--primary-container)] text-[10px] md:text-sm font-black uppercase tracking-[0.28em] mb-2 md:mb-3">Service Overview</p>
-              <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white">{currentService.title}</h2>
-            </div>
-            <div className="p-6 md:p-10">
-              <p className="text-slate-700 text-sm md:text-lg leading-7 md:leading-9">
-                {currentService.description}
-              </p>
+        <div className="max-w-7xl mx-auto px-6 lg:px-14 grid lg:grid-cols-[1.05fr_.95fr] gap-8 lg:gap-10 items-start">
 
-              {/* Practical Steps Row */}
-              <div className="mt-8 md:mt-10 grid sm:grid-cols-2 gap-4 md:gap-5">
-                {currentService.practicalSteps?.map((step: any, idx: number) => (
-                  <div key={idx} className="rounded-xl md:rounded-2xl bg-slate-50 border border-slate-200 p-5 md:p-6">
-                    <p className="text-[10px] font-black uppercase tracking-[0.24em] text-[var(--primary)]">Step 0{idx + 1}</p>
-                    <h3 className="mt-2 md:mt-3 text-lg md:text-xl font-black uppercase leading-tight text-slate-900">{step.practicalStepHeading}</h3>
-                    <p className="mt-2 md:mt-3 text-slate-600 text-xs md:text-base leading-6 md:leading-7">{step.practicalStepDescription}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
 
           <div className="bg-[var(--ink)] rounded-2xl md:rounded-[2rem] overflow-hidden shadow-soft">
             <div className="relative aspect-video w-full bg-black/20 group">
@@ -169,6 +148,39 @@ export default function ServiceDetailPage() {
                   <p className="text-white/90 text-xs md:text-base">{f.title}</p>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl md:rounded-[2rem] border border-slate-200 shadow-soft overflow-hidden">
+            <div className="bg-[var(--ink)] px-6 md:px-10 py-6 md:py-8">
+              <p className="text-[var(--primary-container)] text-[10px] md:text-sm font-black uppercase tracking-[0.28em] mb-2 md:mb-3">Service Overview</p>
+              <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white">{currentService.title}</h2>
+            </div>
+            <div className="p-6 0">
+              <p className="text-slate-700 text-sm md:text-lg leading-7 md:leading-9">
+                {currentService.description}
+              </p>
+
+              {/* Practical Steps Row */}
+              <div className="mt-8 md:mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+                {currentService.practicalSteps?.map((step: any, idx: number) => (
+                  <div key={idx} className="rounded-xl md:rounded-2xl bg-slate-50 border border-slate-200 p-5 md:p-6 flex flex-col h-full">
+                    <p className="text-[10px] font-black uppercase tracking-[0.24em] text-[var(--primary)]">
+                      Step 0{idx + 1}
+                    </p>
+
+                    {/* Fixed Heading: Added responsive text sizing and word breaking */}
+                    <h3 className="mt-2 md:mt-3 text-base md:text-sm  font-black uppercase leading-tight text-slate-900 break-words hyphens-auto">
+                      {step.practicalStepHeading}
+                    </h3>
+
+                    {/* Adjusted Description: Smoothed out the font jump */}
+                    <p className="mt-2 md:mt-3 text-slate-600 text-sm  leading-relaxed">
+                      {step.practicalStepDescription}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

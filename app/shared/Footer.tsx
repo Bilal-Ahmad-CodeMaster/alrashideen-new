@@ -22,8 +22,8 @@ export const Footer = () => {
   const hoverClass = "hover:text-[var(--primary-container)] transition-colors duration-300";
 
   return (
-    <footer className="bg-slate-950 text-white pt-16 pb-10">
-      <div className="container-wrap px-6 lg:px-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
+    <footer className="bg-slate-950 text-white pt-16 pb-10 ">
+      <div className="container-wrap px-6 lg:px-22 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
         {/* Brand Section */}
         <div className="space-y-8">
@@ -38,7 +38,7 @@ export const Footer = () => {
         </div>
 
         {/* Quick Links Column */}
-        <div>
+        <div className="md:pl-20">
           <h4 className="text-sm font-black uppercase tracking-[0.2em] text-[var(--primary-container)] mb-6">
             Quick Links
           </h4>
@@ -86,6 +86,7 @@ export const Footer = () => {
                 <span className="material-symbols-outlined text-[18px]">call</span>
                 +971 52 636 6779
               </a>
+
               <a href="mailto:ahmadali@alrashideenengg.com" className={`flex items-center gap-2 ${hoverClass}`}>
                 <span className="material-symbols-outlined text-[18px]">mail</span>
                 info@alrashideenengg.com

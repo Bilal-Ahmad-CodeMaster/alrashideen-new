@@ -12,7 +12,7 @@ const BusinessesPage = () => {
         },
         {
             id: "02",
-            logo: "/assets/buisnesses/engineenLogo.webp",
+            logo: "/assets/buisnesses/engineenLogo.png",
             title: "Al Rashideen Engineering Turning",
             location: "Industrial Area 11, Sharjah, UAE",
             desc: "Crane structural repair, boom rehabilitation, precision turning, fabrication and workshop engineering support.",
@@ -145,7 +145,7 @@ const BusinessesPage = () => {
                                         {item.title}
                                     </h2>
 
-                                    <p className="mt-3 text-slate-500 text-[13px] leading-relaxed mb-6 flex-grow font-medium line-clamp-3">
+                                    <p className="mt-3 text-slate-500 text-lg leading-relaxed mb-6 flex-grow font-medium line-clamp-3">
                                         {item.desc}
                                     </p>
 

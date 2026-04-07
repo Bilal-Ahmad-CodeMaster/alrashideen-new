@@ -14,4 +14,5 @@ export const CONFIG = {
   coreService: BASE_URL + "/api/coreservices/list",
 
   recentProjects: BASE_URL + "/api/recentprojects/list",
+  getAllVideos: BASE_URL + "/api/videoUrl/list",
 };

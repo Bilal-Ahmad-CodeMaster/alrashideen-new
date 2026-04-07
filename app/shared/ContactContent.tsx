@@ -115,10 +115,17 @@ export const ContactContent = () => {
                   <div className="font-semibold text-slate-900">{themeConfig?.address || "Industrial Area, Sajaa, Sharjah, UAE"}</div>
                 </div>
                 <div>
-                  <div className="text-primary text-xs font-black uppercase tracking-[0.25em] mb-1">Phone</div>
-                  <a href={`tel:${phone}`} className="text-slate-900 text-xl font-bold hover:text-primary transition-colors">
-                    {themeConfig?.phoneNumber}
-                  </a>
+                  <div className=" text-primary text-xs font-black uppercase tracking-[0.25em] mb-1">Phone</div>
+                  <div className="flex gap-5 flex-col" >
+                    <a href={`tel:${phone}`} className="text-slate-900 text-xl font-bold hover:text-primary transition-colors">
+                      {themeConfig?.phoneNumber}
+                    </a>
+                    <a href={`tel:+971501701331`} className="text-slate-900 text-xl font-bold hover:text-primary transition-colors">
+                      +971 50 170 1331
+                    </a>    <a href={`tel:+971542478662`} className="text-slate-900 text-xl font-bold hover:text-primary transition-colors">
+                      +971 54 247 8662
+                    </a>
+                  </div>
                 </div>
                 <div>
                   <div className="text-primary text-xs font-black uppercase tracking-[0.25em] mb-1">Email</div>

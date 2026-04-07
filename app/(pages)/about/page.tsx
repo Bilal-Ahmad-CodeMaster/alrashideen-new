@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 
 const page = () => {
@@ -61,7 +62,105 @@ const page = () => {
           <div className="grid md:grid-cols-3 gap-6"><div className="bg-white p-8 rounded-2xl shadow-soft"><div className="text-5xl font-black text-[var(--primary-container)]-container mb-4">01</div><h3 className="font-black uppercase text-xl">Technical Positioning</h3><p className="mt-4 text-muted leading-7">Built for crane repair, heavy equipment and industrial engineering audiences.</p></div><div className="bg-white p-8 rounded-2xl shadow-soft"><div className="text-5xl font-black text-[var(--primary-container)]-container mb-4">02</div><h3 className="font-black uppercase text-xl">Modern Presentation</h3><p className="mt-4 text-muted leading-7">Clear sections, strong typography and a premium industrial layout.</p></div><div className="bg-white p-8 rounded-2xl shadow-soft"><div className="text-5xl font-black text-[var(--primary-container)]-container mb-4">03</div><h3 className="font-black uppercase text-xl">Editable Structure</h3><p className="mt-4 text-muted leading-7">Every page is plain HTML so your developer can edit it quickly.</p></div></div>
         </div>
       </section>
+      {/* Team & Values Section - Integrated with Gold/Navy Theme */}
+      <section className="py-20 bg-[#f8f9fa] border-y border-gray-200">
+        <div className="max-w-[1680px] mx-auto px-6 md:px-12 xl:px-16 2xl:px-24">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-black mb-4 uppercase text-[#111936]">
+              Our Team & <span className="text-[#ffd700] bg-[#111936] px-2 italic">Values</span>
+            </h2>
+            <div className="w-24 h-1 bg-[#ffd700] mx-auto"></div>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 border-t-4 border-[#111936] shadow-sm group hover:shadow-md transition-all">
+              <div className="text-[#ffd700] text-4xl mb-4 font-black">01</div>
+              <h3 className="text-xl font-black mb-4 uppercase text-[#111936]">Expert Workforce</h3>
+              <p className="text-slate-600 leading-relaxed text-sm">
+                Our team comprises experienced engineers and certified technicians with extensive hands-on expertise in crane structures and mechanical restoration.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 border-t-4 border-[#ffd700] shadow-sm group hover:shadow-md transition-all">
+              <div className="text-[#111936] text-4xl mb-4 font-black">02</div>
+              <h3 className="text-xl font-black mb-4 uppercase text-[#111936]">Integrity First</h3>
+              <p className="text-slate-600 leading-relaxed text-sm">
+                We maintain absolute transparency in our processes, ensuring that every project meets the exact specifications and tolerances required by heavy industry standards.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 border-t-4 border-[#111936] shadow-sm group hover:shadow-md transition-all">
+              <div className="text-[#ffd700] text-4xl mb-4 font-black">03</div>
+              <h3 className="text-xl font-black mb-4 uppercase text-[#111936]">Continuous Innovation</h3>
+              <p className="text-slate-600 leading-relaxed text-sm">
+                We continuously enhance our technical capabilities by staying aligned with evolving crane technologies, hydraulic systems, and advanced mechanical assemblies.
+              </p>
+            </div>
+          </div>
+
+          {/* Statistics Counter */}
+          <div className="mt-20 flex flex-wrap justify-center gap-12 text-center">
+            <div>
+              <p className="text-4xl font-black text-[#111936]">50+</p>
+              <p className="font-bold uppercase tracking-widest text-[10px] px-2 py-1 rounded-md text-[#ffd700] bg-[#111936]  mt-1">Expert Staff</p>
+            </div>
+            <div className="h-12 w-px bg-gray-300 hidden md:block"></div>
+            <div>
+              <p className="text-4xl font-black text-[#111936]">5000+</p>
+              <p className="font-bold uppercase tracking-widest text-[10px] px-2 py-1 rounded-md text-[#ffd700] bg-[#111936] mt-1">Projects Completed</p>
+            </div>
+            <div className="h-12 w-px bg-gray-300 hidden md:block"></div>
+            <div>
+              <p className="text-4xl font-black text-[#111936]">3,000+</p>
+              <p className="font-bold uppercase tracking-widest py-1 rounded-md text-[10px] text-[#ffd700] bg-[#111936] px-2 mt-1">Global Clients</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CEO Message Section */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="max-w-[1680px] mx-auto px-6 md:px-12 xl:px-16 2xl:px-24">
+          <div className="flex flex-col md:flex-row items-stretch gap-12">
+            <div className="md:w-1/2 flex flex-col justify-center">
+              <p className="text-[#ffd700] font-black uppercase tracking-[0.3em] mb-2 text-sm">Leadership</p>
+              <h2 className="text-4xl sm:text-5xl font-black text-[#111936] mb-8 leading-tight uppercase italic">
+                CEO&apos;s <span className="text-[#ffd700]">Message</span>
+              </h2>
+              <div className="relative">
+                <p className="text-slate-600 leading-relaxed text-base md:text-lg mb-8 relative z-10">
+                  &quot;Since 2002, Al Rashideen Engineering Turning has been built on
+                  precision, responsibility, and hands-on engineering. From being
+                  among the early workshops to work directly on cranes to
+                  delivering reliable machining and repairs today, our focus has
+                  always been on doing the job right and standing behind our work.&quot;
+                </p>
+                <span className="absolute -top-6 -left-4 text-8xl text-gray-100 -z-10 font-serif">&quot;</span>
+              </div>
+
+              <div>
+                <p className="font-black text-xl text-[#111936] uppercase tracking-tighter">
+                  Hamid Ali Qureshi
+                </p>
+                <p className="text-[#ffd700] font-bold text-sm uppercase tracking-widest bg-[#111936] inline-block px-3 py-1 mt-1">
+                  Founder & CEO
+                </p>
+              </div>
+            </div>
+
+            <div className="md:w-1/2 relative min-h-[400px]">
+              <div className="absolute inset-0 border-2 border-[#ffd700] translate-x-4 translate-y-4 rounded-2xl -z-10"></div>
+              <Image
+                src="/assets/about3.jpeg"
+                alt="CEO Hamid Ali Qureshi"
+                className="w-full h-full rounded-2xl shadow-xl object-cover"
+                width={800}
+                height={600}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

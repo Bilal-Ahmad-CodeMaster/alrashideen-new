@@ -80,7 +80,7 @@ export default function RootLayout({
               {children}
 
             </div>
-
+            <FloatingSocialIcons />
             <Footer />
           </AppProvider>
 
