@@ -104,7 +104,7 @@ const Projects = () => {
       <section className="py-20 bg-[#f6f7fb] grid-dots min-h-[600px]">
         <div className="container-wrap px-6 lg:px-14">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12 border-b border-slate-200 pb-12">
-            <div className=" flex md:flex-row flex justify-between w-full">
+            <div className=" flex  md:flex-row flex-col justify-between w-full">
               <div className="max-w-3xl">
                 <p className="text-yellow-700 text-sm font-black uppercase tracking-[0.28em] mb-3">
                   Al Rashideen Engineering Group
