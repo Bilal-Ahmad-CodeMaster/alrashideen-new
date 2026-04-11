@@ -53,7 +53,7 @@ const page = () => {
 
           </div>
           <div className="bg-transparent rounded-2xl p-0 shadow-none mt-8">
-            <img src="https://www.alrashideenengg.com/img/cranes-o.jpg" alt="Cranes" className="w-full h-auto rounded-2xl border-none" />
+            <img src="/assets/service2.webp" alt="Cranes" className="w-full h-auto rounded-2xl border-none" />
           </div>
         </div>
       </section>

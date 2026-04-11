@@ -41,7 +41,7 @@ export const Header = () => {
           {/* Logo Section */}
           <Link href="/" className="flex items-start text-xl md:text-2xl font-black tracking-tighter uppercase text-slate-900 z-[110]">
 
-            <img src="https://www.alrashideenengg.com/img/logo.alrashideen.png" alt="Logo" className="w-20 h-20 mr-2 -mt-4 self-start" />
+            <img src="/assets/logo.png" alt="Logo" className="w-20 h-20 mr-2 -mt-4 self-start" />
             <div className="flex flex-col">
               AL RASHIDEEN
               <span className="text-lg md:text-xl">ENGINEERING TURNING</span>
