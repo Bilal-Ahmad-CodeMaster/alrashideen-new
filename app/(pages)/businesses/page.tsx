@@ -32,7 +32,7 @@ const BusinessesPage = () => {
             title: "Lucky Star Heavy Equipment & Spare Parts Tr. L.L.C",
             location: "Industrial Area 11, Sharjah, UAE",
             desc: "Heavy equipment spare parts supply for cranes, construction machinery and workshop requirements.",
-            link: "https://lspartshub.vercel.app",
+            link: "https://www.lspartshub.com",
         },
         {
             id: "05",
