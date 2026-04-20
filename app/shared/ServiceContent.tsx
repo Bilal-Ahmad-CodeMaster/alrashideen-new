@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image"; // Import Next Image
 import { CONFIG } from "@/config";
 import { toast, Toaster } from "react-hot-toast";
 
@@ -38,12 +39,19 @@ export const ServiceContent = () => {
       .slice(0, 2);
   };
 
+  // Helper to safely format image URLs (handles spaces and missing protocols)
+  const getSafeImageUrl = (url: string) => {
+    console.log(url)
+    if (!url) return "/fallback-image.jpg"; // Create a placeholder in your public folder
+    return url.replace(/ /g, "%20");
+  };
+
   return (
     <>
       <Toaster position="top-right" />
 
+      {/* Hero Section */}
       <section className="relative min-h-[45vh] lg:h-[450px] flex items-center overflow-hidden bg-[#181a30] py-16 lg:py-0">
-        {/* Background Layer with Consistent Gradients */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[#111936]/60" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#111936]/40 via-[#111936]/20 to-transparent" />
@@ -53,8 +61,6 @@ export const ServiceContent = () => {
         <div className="relative z-10 w-full">
           <div className="max-w-[1680px] mx-auto px-6 md:px-12 xl:px-16 2xl:px-24">
             <div className="max-w-[1100px]">
-
-              {/* 1. Tagline Badge - Compact */}
               <div className="inline-flex items-center gap-2 px-2.5 py-1 border border-[#ffd700]/25 bg-[#ffd700]/10 rounded-sm mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#ffd700] animate-pulse"></span>
                 <span className="text-[#ffd700] text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
@@ -62,19 +68,16 @@ export const ServiceContent = () => {
                 </span>
               </div>
 
-              {/* 2. Main Heading - Scaled for tighter height */}
               <h1 className="text-[34px] leading-[0.95] sm:text-[50px] md:text-[60px] xl:text-[68px] font-black text-white uppercase tracking-[-0.04em] italic">
                 Engineering Services<br />
                 <span className="text-[#ffd700]">For Crane Systems</span>
               </h1>
 
-              {/* 3. Description - Precise Font Size & Original Text */}
               <p className="mt-4 max-w-[750px] text-[14px] leading-[1.4] md:text-[18px] text-[#ffd700]/90 border-l-[3px] border-[#ffd700] pl-4 font-medium">
                 Advanced crane boom repair, structural reinforcement, and hydraulic restoration
                 for mobile and crawler crane systems. Precision engineering for heavy-duty performance.
               </p>
 
-              {/* 4. CTA Buttons - Scaled for Compact Layout */}
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/contact#enquiry"
@@ -91,7 +94,6 @@ export const ServiceContent = () => {
                   Send Photos On WhatsApp
                 </a>
               </div>
-
             </div>
           </div>
         </div>
@@ -109,18 +111,22 @@ export const ServiceContent = () => {
                   key={service._id}
                   className="group flex flex-col bg-white rounded-[1.75rem] overflow-hidden shadow-[0_20px_55px_rgba(8,15,40,.10)] border border-slate-200 transition-all duration-300 hover:-translate-y-2"
                 >
-                  <Link href={`/service/${service._id}`} className="block relative h-64 overflow-hidden">
-                    {/* Background Image with Ink Gradient Overlay */}
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                      style={{ backgroundImage: `url(${service.galleryImages?.[0]?.image || ""})` }}
+                  <Link href={`/service/${service._id}`} className="block relative h-64 overflow-hidden bg-slate-200">
+                    {/* Using Next Image for better reliability and performance */}
+                    <Image
+                      src={getSafeImageUrl(service.galleryImages?.[0]?.image)}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
-                    {/* The "Ink" Gradient: Darkens top and bottom to make text pop */}
+
+                    {/* Dark Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80"></div>
 
                     {/* Overlay Content */}
                     <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                      <div className="text-[var(--primary-container)] text-xs font-black uppercase tracking-[0.28em] drop-shadow-md">
+                      <div className="text-white text-xs font-black uppercase tracking-[0.28em] drop-shadow-md">
                         {service.bulletPoints?.[0] || "Specialized Service"}
                       </div>
 
@@ -128,14 +134,13 @@ export const ServiceContent = () => {
                         <div className="w-16 h-16 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md flex items-center justify-center text-white font-black text-xl">
                           {getInitials(service.title)}
                         </div>
-                        <div className="text-[var(--primary-container)] text-xs font-black uppercase tracking-[0.28em]">
+                        <div className="text-white text-xs font-black uppercase tracking-[0.28em]">
                           Service {String(index + 1).padStart(2, '0')}
                         </div>
                       </div>
                     </div>
                   </Link>
 
-                  {/* Text Content Area */}
                   <div className="flex flex-col flex-grow p-8 md:p-9">
                     <span className="text-yellow-700 text-xs font-black uppercase tracking-[0.26em]">Engineering Service</span>
                     <h2 className="mt-4 text-[1.75rem] leading-tight font-black uppercase text-[#0f1738] group-hover:text-yellow-700 transition-colors">
@@ -145,7 +150,6 @@ export const ServiceContent = () => {
                       {service.description}
                     </p>
 
-                    {/* This pushes the button to the absolute bottom of the card */}
                     <div className="mt-auto pt-8">
                       <Link
                         href={`/service/${service._id}`}
